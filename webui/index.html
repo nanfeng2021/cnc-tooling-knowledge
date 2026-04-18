@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CNC 刀具知识库 - 智能问答系统</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .markdown-body { line-height: 1.6; }
+        .markdown-body p { margin-bottom: 0.5em; }
+        .markdown-body ul { list-style-type: disc; margin-left: 1.5em; margin-bottom: 0.5em; }
+        .markdown-body ol { list-style-type: decimal; margin-left: 1.5em; margin-bottom: 0.5em; }
+        .loading-spinner {
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid #3498db;
+            border-radius: 50%;
+            width: 24px;
+            height: 24px;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .message-user {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        .message-assistant {
+            background: #f3f4f6;
+            color: #1f2937;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <div id="app" class="min-h-screen flex flex-col">
+        <!-- Header -->
+        <header class="bg-white shadow-sm border-b">
+            <div class="max-w-7xl mx-auto px-4 py-4 sm:px-6 lg:px-8">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center space-x-3">
+                        <i class="fas fa-cog text-3xl text-blue-600"></i>
+                        <div>
+                            <h1 class="text-2xl font-bold text-gray-900">CNC 刀具知识库</h1>
+                            <p class="text-sm text-gray-500">智能问答 · 刀具推荐 · 参数查询</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center space-x-4">
+                        <span class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm">
+                            <i class="fas fa-circle text-xs mr-1"></i>在线
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 h-full">
+                
+                <!-- Chat Area -->
+                <div class="lg:col-span-2 bg-white rounded-xl shadow-lg flex flex-col h-[70vh]">
+                    <!-- Messages -->
+                    <div ref="messagesContainer" class="flex-1 overflow-y-auto p-6 space-y-4">
+                        <div v-if="messages.length === 0" class="text-center py-12">
+                            <i class="fas fa-robot text-6xl text-gray-300 mb-4"></i>
+                            <h3 class="text-lg font-semibold text-gray-600 mb-2">欢迎使用 CNC 刀具智能助手</h3>
+                            <p class="text-gray-500">我可以帮您：</p>
+                            <ul class="text-left inline-block mt-3 space-y-2 text-gray-600">
+                                <li><i class="fas fa-check text-green-500 mr-2"></i>推荐合适的刀具</li>
+                                <li><i class="fas fa-check text-green-500 mr-2"></i>提供切削参数建议</li>
+                                <li><i class="fas fa-check text-green-500 mr-2"></i>解答加工问题</li>
+                                <li><i class="fas fa-check text-green-500 mr-2"></i>查询刀具信息</li>
+                            </ul>
+                        </div>
+                        
+                        <div v-for="(msg, index) in messages" :key="index" 
+                             :class="['rounded-2xl p-4 max-w-[85%]', msg.role === 'user' ? 'message-user ml-auto' : 'message-assistant']">
+                            <div class="flex items-start space-x-3">
+                                <div v-if="msg.role === 'assistant'" class="flex-shrink-0">
+                                    <i class="fas fa-robot text-blue-600"></i>
+                                </div>
+                                <div class="flex-1">
+                                    <p class="text-sm" v-html="formatMessage(msg.content)"></p>
+                                    <div v-if="msg.sources && msg.sources.length > 0" class="mt-3 pt-3 border-t border-gray-300">
+                                        <p class="text-xs font-semibold text-gray-500 mb-2">参考来源:</p>
+                                        <div v-for="(source, sidx) in msg.sources" :key="sidx" 
+                                             class="text-xs bg-white p-2 rounded mb-1">
+                                            <span class="font-medium">{{ source.cutter?.name || 'Unknown' }}</span>
+                                            <span v-if="source.relevance_score" class="text-gray-400 ml-2">
+                                                (相关性：{{ (source.relevance_score * 100).toFixed(0) }}%)
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div v-if="isLoading" class="flex items-center space-x-2 text-gray-500">
+                            <div class="loading-spinner"></div>
+                            <span>思考中...</span>
+                        </div>
+                    </div>
+
+                    <!-- Input Area -->
+                    <div class="border-t p-4">
+                        <form @submit.prevent="sendMessage" class="flex space-x-3">
+                            <input 
+                                v-model="userInput"
+                                type="text"
+                                placeholder="输入您的问题，例如：'加工不锈钢用什么刀具好？'"
+                                class="flex-1 px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                :disabled="isLoading"
+                            />
+                            <button 
+                                type="submit"
+                                :disabled="isLoading || !userInput.trim()"
+                                class="px-6 py-3 bg-blue-600 text-white rounded-xl hover:bg-blue-700 disabled:bg-gray-400 disabled:cursor-not-allowed transition-colors"
+                            >
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </form>
+                        <div class="mt-3 flex flex-wrap gap-2">
+                            <button @click="setQuickQuestion('不锈钢精加工推荐什么刀具？')" 
+                                    class="px-3 py-1 bg-gray-100 hover:bg-gray-200 rounded-full text-xs text-gray-700">
+                                不锈钢精加工
+                            </button>
+                            <button @click="setQuickQuestion('铝合金高速铣削用什么刀具？')" 
+                                    class="px-3 py-1 bg-gray-100 hover:bg-gray-200 rounded-full text-xs text-gray-700">
+                                铝合金铣削
+                            </button>
+                            <button @click="setQuickQuestion('钛合金加工的切削参数怎么设置？')" 
+                                    class="px-3 py-1 bg-gray-100 hover:bg-gray-200 rounded-full text-xs text-gray-700">
+                                钛合金参数
+                            </button>
+                            <button @click="setQuickQuestion('5 轴加工需要注意什么？')" 
+                                    class="px-3 py-1 bg-gray-100 hover:bg-gray-200 rounded-full text-xs text-gray-700">
+                                5 轴加工
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sidebar -->
+                <div class="space-y-6">
+                    <!-- Quick Actions -->
+                    <div class="bg-white rounded-xl shadow-lg p-6">
+                        <h3 class="font-semibold text-gray-900 mb-4"><i class="fas fa-bolt text-yellow-500 mr-2"></i>快速操作</h3>
+                        <div class="space-y-3">
+                            <button @click="showRecommendationModal = true" 
+                                    class="w-full text-left px-4 py-3 bg-gradient-to-r from-purple-50 to-purple-100 hover:from-purple-100 hover:to-purple-200 rounded-lg transition-colors">
+                                <div class="flex items-center justify-between">
+                                    <span class="text-sm font-medium text-purple-900">🛠️ 刀具推荐</span>
+                                    <i class="fas fa-chevron-right text-purple-600"></i>
+                                </div>
+                                <p class="text-xs text-purple-700 mt-1">根据工况推荐最佳刀具</p>
+                            </button>
+                            
+                            <button @click="searchCutters" 
+                                    class="w-full text-left px-4 py-3 bg-gradient-to-r from-blue-50 to-blue-100 hover:from-blue-100 hover:to-blue-200 rounded-lg transition-colors">
+                                <div class="flex items-center justify-between">
+                                    <span class="text-sm font-medium text-blue-900">🔍 搜索刀具</span>
+                                    <i class="fas fa-chevron-right text-blue-600"></i>
+                                </div>
+                                <p class="text-xs text-blue-700 mt-1">语义搜索知识库</p>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Recent Searches -->
+                    <div class="bg-white rounded-xl shadow-lg p-6">
+                        <h3 class="font-semibold text-gray-900 mb-4"><i class="fas fa-history text-gray-500 mr-2"></i>最近搜索</h3>
+                        <div v-if="recentSearches.length === 0" class="text-gray-400 text-sm">暂无搜索记录</div>
+                        <ul v-else class="space-y-2">
+                            <li v-for="(search, idx) in recentSearches" :key="idx" 
+                                @click="userInput = search; sendMessage()"
+                                class="text-sm text-gray-700 hover:text-blue-600 cursor-pointer truncate">
+                                <i class="fas fa-search text-gray-400 mr-2"></i>{{ search }}
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Stats -->
+                    <div class="bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl shadow-lg p-6 text-white">
+                        <h3 class="font-semibold mb-4"><i class="fas fa-chart-bar mr-2"></i>知识库统计</h3>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div>
+                                <div class="text-2xl font-bold">{{ stats.totalCutters }}</div>
+                                <div class="text-xs opacity-80">刀具数量</div>
+                            </div>
+                            <div>
+                                <div class="text-2xl font-bold">{{ stats.messagesToday }}</div>
+                                <div class="text-xs opacity-80">今日问答</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Tool Recommendation Modal -->
+        <div v-if="showRecommendationModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+            <div class="bg-white rounded-2xl max-w-2xl w-full mx-4 max-h-[80vh] overflow-y-auto">
+                <div class="p-6 border-b flex items-center justify-between">
+                    <h3 class="text-xl font-bold text-gray-900"><i class="fas fa-magic text-purple-600 mr-2"></i>智能刀具推荐</h3>
+                    <button @click="showRecommendationModal = false" class="text-gray-400 hover:text-gray-600">
+                        <i class="fas fa-times text-xl"></i>
+                    </button>
+                </div>
+                
+                <div class="p-6">
+                    <form @submit.prevent="getToolRecommendation" class="space-y-4">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">工件材料</label>
+                            <select v-model="recommendForm.material" required
+                                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500">
+                                <option value="">选择材料...</option>
+                                <option value="steel">钢 (Steel)</option>
+                                <option value="stainless_steel">不锈钢 (Stainless Steel)</option>
+                                <option value="aluminum">铝合金 (Aluminum)</option>
+                                <option value="cast_iron">铸铁 (Cast Iron)</option>
+                                <option value="titanium">钛合金 (Titanium)</option>
+                                <option value="inconel">高温合金 (Inconel)</option>
+                                <option value="hardened_steel">淬硬钢 (Hardened Steel)</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">加工类型</label>
+                            <select v-model="recommendForm.operation" required
+                                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500">
+                                <option value="">选择加工类型...</option>
+                                <option value="roughing">粗加工 (Roughing)</option>
+                                <option value="finishing">精加工 (Finishing)</option>
+                                <option value="semi-finishing">半精加工 (Semi-finishing)</option>
+                                <option value="drilling">钻孔 (Drilling)</option>
+                                <option value="threading">攻丝 (Threading)</option>
+                                <option value="grooving">切槽 (Grooving)</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">机床类型</label>
+                            <select v-model="recommendForm.machineType"
+                                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500">
+                                <option value="3-axis">3 轴加工中心</option>
+                                <option value="5-axis">5 轴联动加工中心</option>
+                                <option value="2-axis-lathe">2 轴车床</option>
+                                <option value="mill-turn">车铣复合</option>
+                            </select>
+                        </div>
+                        
+                        <button type="submit" :disabled="isRecommending"
+                                class="w-full py-3 bg-purple-600 text-white rounded-lg hover:bg-purple-700 disabled:bg-gray-400 transition-colors">
+                            {{ isRecommending ? '生成推荐中...' : '获取推荐' }}
+                        </button>
+                    </form>
+                    
+                    <div v-if="recommendationResult" class="mt-6 p-4 bg-purple-50 rounded-lg">
+                        <h4 class="font-semibold text-purple-900 mb-2">推荐结果:</h4>
+                        <div class="text-sm text-purple-800 whitespace-pre-line">{{ recommendationResult }}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const { createApp } = Vue;
+
+        createApp({
+            data() {
+                return {
+                    userInput: '',
+                    messages: [],
+                    isLoading: false,
+                    recentSearches: [],
+                    showRecommendationModal: false,
+                    isRecommending: false,
+                    recommendForm: {
+                        material: '',
+                        operation: '',
+                        machineType: '3-axis'
+                    },
+                    recommendationResult: null,
+                    stats: {
+                        totalCutters: 0,
+                        messagesToday: 0
+                    },
+                    API_BASE: 'http://localhost:8000'
+                }
+            },
+            
+            mounted() {
+                this.loadStats();
+                this.loadRecentSearches();
+            },
+            
+            methods: {
+                async sendMessage() {
+                    if (!this.userInput.trim() || this.isLoading) return;
+                    
+                    const question = this.userInput.trim();
+                    this.userInput = '';
+                    
+                    // Add user message
+                    this.messages.push({
+                        role: 'user',
+                        content: question
+                    });
+                    
+                    // Save to recent searches
+                    this.addToRecentSearches(question);
+                    
+                    this.isLoading = true;
+                    this.scrollToBottom();
+                    
+                    try {
+                        const response = await fetch(`${this.API_BASE}/chat`, {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify({
+                                question: question,
+                                top_k: 5,
+                                use_rag: true
+                            })
+                        });
+                        
+                        const data = await response.json();
+                        
+                        this.messages.push({
+                            role: 'assistant',
+                            content: data.answer,
+                            sources: data.sources || []
+                        });
+                        
+                    } catch (error) {
+                        this.messages.push({
+                            role: 'assistant',
+                            content: `抱歉，发生错误：${error.message}。请检查 API 服务是否运行。`
+                        });
+                    } finally {
+                        this.isLoading = false;
+                        this.scrollToBottom();
+                    }
+                },
+                
+                async getToolRecommendation() {
+                    if (!this.recommendForm.material || !this.recommendForm.operation) return;
+                    
+                    this.isRecommending = true;
+                    this.recommendationResult = null;
+                    
+                    try {
+                        const response = await fetch(`${this.API_BASE}/recommend/tool`, {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify(this.recommendForm)
+                        });
+                        
+                        const data = await response.json();
+                        this.recommendationResult = data.recommendation;
+                        
+                    } catch (error) {
+                        this.recommendationResult = `获取推荐失败：${error.message}`;
+                    } finally {
+                        this.isRecommending = false;
+                    }
+                },
+                
+                async searchCutters() {
+                    const query = prompt('请输入搜索关键词:');
+                    if (!query) return;
+                    
+                    try {
+                        const response = await fetch(`${this.API_BASE}/search`, {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify({ query, top_k: 10 })
+                        });
+                        
+                        const results = await response.json();
+                        alert(`找到 ${results.length} 个结果\n\n` + 
+                              results.map((r, i) => `${i+1}. ${r.cutter.name}\n   类型：${r.cutter.cutter_type.category}\n   相关性：${(r.relevance_score * 100).toFixed(0)}%`).join('\n\n'));
+                        
+                    } catch (error) {
+                        alert(`搜索失败：${error.message}`);
+                    }
+                },
+                
+                async loadStats() {
+                    try {
+                        const response = await fetch(`${this.API_BASE}/cutters?limit=1`);
+                        const data = await response.json();
+                        this.stats.totalCutters = data.total || 0;
+                        this.stats.messagesToday = localStorage.getItem('messagesToday') || 0;
+                    } catch (error) {
+                        console.error('Failed to load stats:', error);
+                    }
+                },
+                
+                loadRecentSearches() {
+                    const searches = localStorage.getItem('recentSearches');
+                    if (searches) {
+                        this.recentSearches = JSON.parse(searches).slice(0, 5);
+                    }
+                },
+                
+                addToRecentSearches(query) {
+                    let searches = JSON.parse(localStorage.getItem('recentSearches') || '[]');
+                    searches = [query, ...searches.filter(s => s !== query)].slice(0, 10);
+                    localStorage.setItem('recentSearches', JSON.stringify(searches));
+                    this.recentSearches = searches.slice(0, 5);
+                },
+                
+                setQuickQuestion(question) {
+                    this.userInput = question;
+                },
+                
+                scrollToBottom() {
+                    this.$nextTick(() => {
+                        const container = this.$refs.messagesContainer;
+                        if (container) {
+                            container.scrollTop = container.scrollHeight;
+                        }
+                    });
+                },
+                
+                formatMessage(content) {
+                    // Simple markdown-like formatting
+                    return content
+                        .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+                        .replace(/\n/g, '<br>')
+                        .replace(/- (.*?)(?=\n|$)/g, '• $1<br>');
+                }
+            }
+        }).mount('#app');
+    </script>
+</body>
+</html>

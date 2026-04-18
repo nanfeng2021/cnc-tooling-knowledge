@@ -70,16 +70,44 @@ cd cnc-tooling-knowledge
 python3 -m venv venv
 source venv/bin/activate
 pip install -e ".[dev]"
+
+# 安装 LLM 和爬虫额外依赖
+pip install openai ollama requests beautifulsoup4 lxml
 ```
 
-### 2. 初始化知识库
+### 2. 配置环境变量
 
 ```bash
-# 导入示例刀具数据
+cp .env.example .env
+# 编辑 .env 文件，填入你的 OpenAI API Key 或其他配置
+```
+
+### 3. 抓取刀具厂商数据（可选）
+
+```bash
+# 爬取主流刀具厂商产品数据
+python scripts/scrape_vendor_data.py --vendor all
+
+# 或只爬取特定厂商
+python scripts/scrape_vendor_data.py --vendor sandvik
+python scripts/scrape_vendor_data.py --vendor kennametal
+```
+
+### 4. 导入知识库
+
+```bash
+# 将爬取的刀具数据导入向量数据库
+python scripts/import_vendor_data.py
+```
+
+### 5. 初始化知识库
+
+```bash
+# 导入示例刀具数据（如果还没导入厂商数据）
 python scripts/init_knowledge_base.py
 ```
 
-### 3. 启动服务
+### 6. 启动服务
 
 ```bash
 ./start_server.sh
@@ -89,14 +117,42 @@ python -m uvicorn src.interface.api.api:app --reload --port 8000
 
 访问 API 文档：**http://localhost:8000/docs**
 
-### 4. 测试搜索
+### 7. 打开 Web UI
+
+直接用浏览器打开：
+```bash
+# macOS
+open webui/index.html
+
+# Linux
+xdg-open webui/index.html
+
+# Windows (WSL)
+explorer.exe webui/index.html
+```
+
+或者使用简单的 HTTP 服务器：
+```bash
+cd webui
+python -m http.server 3000
+# 访问 http://localhost:3000
+```
+
+### 8. 测试搜索
 
 ```bash
 # 语义搜索
 python scripts/test_query.py "carbide end mill for steel"
 
-# 按材料搜索
-python scripts/test_query.py "aluminum drilling tools"
+# LLM 智能问答
+curl -X POST http://localhost:8000/chat \
+  -H 'Content-Type: application/json' \
+  -d '{"question": "不锈钢精加工用什么刀具好？", "top_k": 5}'
+
+# 刀具推荐
+curl -X POST http://localhost:8000/recommend/tool \
+  -H 'Content-Type: application/json' \
+  -d '{"workpiece_material": "stainless_steel", "operation": "finishing", "machine_type": "3-axis"}'
 ```
 
 ---

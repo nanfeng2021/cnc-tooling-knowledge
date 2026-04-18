@@ -21,6 +21,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, Field
 from typing import Optional, List
 from uuid import UUID
+import os
 
 from src.application.handlers.cutter_handler import CutterCommandHandler, CutterQueryHandler
 from src.application.commands.ingest_cutter import IngestCutterCommand
@@ -37,6 +38,13 @@ from src.application.dto.cutter_dto import (
     ErrorResponse,
 )
 from src.domain.repositories.cutter_repo import CutterNotFoundError, DuplicateCutterError
+
+
+# ============================================================================
+# LLM Service Imports
+# ============================================================================
+
+from typing import Any
 
 
 # ============================================================================
@@ -91,6 +99,41 @@ class SearchRequest(BaseModel):
     query: str = Field(..., min_length=1, description="Search query")
     top_k: int = Field(default=5, ge=1, le=50)
     filters: Optional[dict] = None
+
+
+class ChatRequest(BaseModel):
+    """Request model for LLM-powered Q&A."""
+    
+    question: str = Field(..., min_length=1, description="User's question")
+    top_k: int = Field(default=5, ge=1, le=20, description="Number of documents to retrieve")
+    use_rag: bool = Field(default=True, description="Whether to use RAG context")
+
+
+class ChatResponse(BaseModel):
+    """Response model for Q&A."""
+    
+    question: str
+    answer: str
+    sources: List[Dict[str, Any]] = []
+    model: str
+    provider: str
+
+
+class ToolRecommendationRequest(BaseModel):
+    """Request model for tool recommendation."""
+    
+    workpiece_material: str = Field(..., description="Workpiece material")
+    operation: str = Field(..., description="Machining operation")
+    machine_type: str = Field(default="3-axis", description="Machine type")
+
+
+class ToolRecommendationResponse(BaseModel):
+    """Response model for tool recommendation."""
+    
+    material: str
+    operation: str
+    machine_type: str
+    recommendation: str
 
 
 # ============================================================================
@@ -296,6 +339,111 @@ def register_routes(app: FastAPI) -> None:
         
         results = handler.handle_search_by_material(query)
         return results
+    
+    @app.post(
+        "/chat",
+        response_model=ChatResponse,
+        tags=["LLM Q&A"],
+    )
+    async def chat(
+        request: ChatRequest,
+        query_handler: CutterQueryHandler = Depends(get_query_handler),
+    ):
+        """
+        Intelligent Q&A with RAG context.
+        
+        Combines retrieved knowledge from vector store with LLM reasoning
+        to provide accurate, context-aware answers about cutting tools.
+        
+        Example questions:
+        - "What's the best tool for stainless steel finishing?"
+        - "推荐加工铝合金的刀具"
+        - "钛合金加工需要注意什么？"
+        """
+        from src.infrastructure.external.llm_service import create_llm_service
+        
+        # Retrieve relevant documents
+        retrieved_docs = []
+        if request.use_rag:
+            search_query = SearchCuttersQuery(
+                query_text=request.question,
+                top_k=request.top_k,
+            )
+            results = query_handler.handle_search(search_query)
+            retrieved_docs = [
+                {
+                    "cutter": result.cutter.to_dict() if hasattr(result.cutter, 'to_dict') else str(result.cutter),
+                    "relevance_score": result.relevance_score,
+                }
+                for result in results
+            ]
+        
+        # Get LLM response with RAG context
+        try:
+            llm = create_llm_service(
+                provider=os.getenv("LLM_PROVIDER", "openai"),
+                model=os.getenv("LLM_MODEL", "gpt-4o-mini"),
+            )
+            
+            response = llm.ask(
+                question=request.question,
+                retrieved_docs=retrieved_docs,
+            )
+            
+            return ChatResponse(
+                question=response["question"],
+                answer=response["answer"],
+                sources=response["sources"],
+                model=response["model"],
+                provider=response["provider"],
+            )
+            
+        except Exception as e:
+            # Fallback without LLM
+            return ChatResponse(
+                question=request.question,
+                answer=f"LLM service unavailable: {str(e)}. Please check your API key configuration.",
+                sources=retrieved_docs[:3],
+                model="fallback",
+                provider="none",
+            )
+    
+    @app.post(
+        "/recommend/tool",
+        response_model=ToolRecommendationResponse,
+        tags=["LLM Q&A"],
+    )
+    async def recommend_tool(request: ToolRecommendationRequest):
+        """
+        Get AI-powered tool recommendation for specific machining operation.
+        
+        Provides detailed recommendations including:
+        - Tool type and geometry
+        - Material and coating
+        - Cutting parameters
+        - Key considerations
+        """
+        from src.infrastructure.external.llm_service import create_llm_service
+        
+        try:
+            llm = create_llm_service(
+                provider=os.getenv("LLM_PROVIDER", "openai"),
+                model=os.getenv("LLM_MODEL", "gpt-4o-mini"),
+            )
+            
+            result = llm.recommend_tool(
+                workpiece_material=request.workpiece_material,
+                operation=request.operation,
+                machine_type=request.machine_type,
+            )
+            
+            return ToolRecommendationResponse(**result)
+            
+        except Exception as e:
+            raise HTTPException(
+                status_code=500,
+                detail=f"Recommendation service unavailable: {str(e)}",
+            )
     
     @app.exception_handler(CutterNotFoundError)
     async def cutter_not_found_handler(request, exc):
