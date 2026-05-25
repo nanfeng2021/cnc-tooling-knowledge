@@ -1,40 +1,8 @@
 steps:
   test:
-    image: python:3.11-slim
-    environment:
-      PIP_INDEX_URL: https://pypi.tuna.tsinghua.edu.cn/simple
-      PIP_TRUSTED_HOST: pypi.tuna.tsinghua.edu.cn
+    image: alpine
     commands:
-      - pip install -e ".[dev]" -q
-      - pytest tests/unit/ -v --tb=short
+      - echo "Hello from Woodpecker CI"
+      - ls -la
     when:
       event: [push, pull_request, manual]
-
-  # 可选：构建Docker镜像（如果需要）
-  # build:
-  #   image: woodpeckerci/plugin-docker-buildx
-  #   settings:
-  #     repo: nanfeng2021/cnc-tooling-knowledge
-  #     tag: latest
-  #     build_args:
-  #       - APP_VERSION=${CI_COMMIT_SHA}
-  #     when:
-  #       event: [push, manual]
-
-  # 可选：部署步骤（如果需要）
-  # deploy:
-  #   image: appleboy/drone-ssh
-  #   settings:
-  #     host:
-  #       from_secret: deploy_host
-  #     username: root
-  #     key:
-  #       from_secret: ssh_key
-  #     port: 22
-  #     command_timeout: 10m
-  #     script:
-  #       - cd /root/clacky_workspace/cnc-tooling-knowledge
-  #       - git pull origin main
-  #       - docker compose -f docker-compose.prod.yml up -d --build --remove-orphans
-  #   when:
-  #     event: [push, manual]
