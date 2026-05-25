@@ -36,59 +36,6 @@ steps:
     when:
       event: [push, pull_request, manual]
 
-  # ==================== Build Stage ====================
-  build-api-gateway:
-    image: plugins/docker
-    settings:
-      repo: nanfeng2021/cnc-api-gateway
-      tags:
-        - latest
-        - ${CI_COMMIT_SHA:0:8}
-      dockerfile: cnc-api-gateway/Dockerfile
-      context: cnc-api-gateway
-    when:
-      event: [push, manual]
-      branch: main
-
-  build-cutter-management:
-    image: plugins/docker
-    settings:
-      repo: nanfeng2021/cnc-cutter-management
-      tags:
-        - latest
-        - ${CI_COMMIT_SHA:0:8}
-      dockerfile: cutter-management/Dockerfile
-      context: cutter-management
-    when:
-      event: [push, manual]
-      branch: main
-
-  build-ai-service:
-    image: plugins/docker
-    settings:
-      repo: nanfeng2021/cnc-ai-service
-      tags:
-        - latest
-        - ${CI_COMMIT_SHA:0:8}
-      dockerfile: ai-service/Dockerfile
-      context: ai-service
-    when:
-      event: [push, manual]
-      branch: main
-
-  build-frontend:
-    image: plugins/docker
-    settings:
-      repo: nanfeng2021/cnc-frontend
-      tags:
-        - latest
-        - ${CI_COMMIT_SHA:0:8}
-      dockerfile: frontend/Dockerfile
-      context: frontend
-    when:
-      event: [push, manual]
-      branch: main
-
   # ==================== Deploy Stage ====================
   deploy:
     image: appleboy/drone-ssh
@@ -110,4 +57,3 @@ steps:
     when:
       event: [push, manual]
       branch: main
-# Trigger build
