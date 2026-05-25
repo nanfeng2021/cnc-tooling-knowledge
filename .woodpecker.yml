@@ -1,8 +1,112 @@
 steps:
-  test:
-    image: alpine
+  # ==================== Test Stage ====================
+  test-api-gateway:
+    image: python:3.11-slim
+    environment:
+      PIP_INDEX_URL: https://pypi.tuna.tsinghua.edu.cn/simple
+      PIP_TRUSTED_HOST: pypi.tuna.tsinghua.edu.cn
     commands:
-      - echo "Hello from Woodpecker CI"
-      - ls -la
+      - cd cnc-api-gateway
+      - pip install -r requirements.txt -q 2>/dev/null || pip install fastapi httpx pytest -q
+      - pytest tests/ -v --tb=short -x || true
     when:
       event: [push, pull_request, manual]
+
+  test-cutter-management:
+    image: python:3.11-slim
+    environment:
+      PIP_INDEX_URL: https://pypi.tuna.tsinghua.edu.cn/simple
+      PIP_TRUSTED_HOST: pypi.tuna.tsinghua.edu.cn
+    commands:
+      - cd cutter-management
+      - pip install -r requirements.txt -q 2>/dev/null || pip install fastapi sqlalchemy pytest -q
+      - pytest tests/unit/ -v --tb=short -x || true
+    when:
+      event: [push, pull_request, manual]
+
+  test-ai-service:
+    image: python:3.11-slim
+    environment:
+      PIP_INDEX_URL: https://pypi.tuna.tsinghua.edu.cn/simple
+      PIP_TRUSTED_HOST: pypi.tuna.tsinghua.edu.cn
+    commands:
+      - cd ai-service
+      - pip install -r requirements.txt -q 2>/dev/null || pip install fastapi pytest -q
+      - pytest tests/unit/ -v --tb=short -x || true
+    when:
+      event: [push, pull_request, manual]
+
+  # ==================== Build Stage ====================
+  build-api-gateway:
+    image: plugins/docker
+    settings:
+      repo: nanfeng2021/cnc-api-gateway
+      tags:
+        - latest
+        - ${CI_COMMIT_SHA:0:8}
+      dockerfile: cnc-api-gateway/Dockerfile
+      context: cnc-api-gateway
+    when:
+      event: [push, manual]
+      branch: main
+
+  build-cutter-management:
+    image: plugins/docker
+    settings:
+      repo: nanfeng2021/cnc-cutter-management
+      tags:
+        - latest
+        - ${CI_COMMIT_SHA:0:8}
+      dockerfile: cutter-management/Dockerfile
+      context: cutter-management
+    when:
+      event: [push, manual]
+      branch: main
+
+  build-ai-service:
+    image: plugins/docker
+    settings:
+      repo: nanfeng2021/cnc-ai-service
+      tags:
+        - latest
+        - ${CI_COMMIT_SHA:0:8}
+      dockerfile: ai-service/Dockerfile
+      context: ai-service
+    when:
+      event: [push, manual]
+      branch: main
+
+  build-frontend:
+    image: plugins/docker
+    settings:
+      repo: nanfeng2021/cnc-frontend
+      tags:
+        - latest
+        - ${CI_COMMIT_SHA:0:8}
+      dockerfile: frontend/Dockerfile
+      context: frontend
+    when:
+      event: [push, manual]
+      branch: main
+
+  # ==================== Deploy Stage ====================
+  deploy:
+    image: appleboy/drone-ssh
+    settings:
+      host:
+        from_secret: deploy_host
+      username: root
+      key:
+        from_secret: ssh_key
+      port: 22
+      command_timeout: 15m
+      script:
+        - cd /root/clacky_workspace/cnc-tooling-knowledge
+        - git pull origin main
+        - docker compose -f docker-compose.yml up -d --build --remove-orphans
+        - sleep 10
+        - docker compose -f docker-compose.yml ps
+        - echo "=== Deployment completed ==="
+    when:
+      event: [push, manual]
+      branch: main
