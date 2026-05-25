@@ -1,0 +1,1 @@
+"""Shared messaging infrastructure package."""

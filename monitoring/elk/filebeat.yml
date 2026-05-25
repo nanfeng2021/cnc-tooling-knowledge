@@ -1,0 +1,47 @@
+# Filebeat 配置 - 收集Docker容器日志
+
+filebeat.inputs:
+  # 收集CNC服务容器的日志
+  - type: container
+    paths:
+      - '/var/lib/docker/containers/*/*.log'
+    # 只收集cnc相关的容器日志
+    processors:
+      - add_docker_metadata:
+          host: "unix:///var/run/docker.sock"
+      - drop_event:
+          when:
+            not:
+              contains:
+                container.name: "cnc-"
+
+# 处理器配置
+processors:
+  # 添加Docker元数据
+  - add_docker_metadata:
+      host: "unix:///var/run/docker.sock"
+
+  # 解析JSON日志
+  - decode_json_fields:
+      fields: ["message"]
+      target: "log"
+      overwrite_keys: true
+
+  # 添加服务名称
+  - add_fields:
+      target: ''
+      fields:
+        environment: test
+
+# 输出到Logstash
+output.logstash:
+  hosts: ["logstash:5044"]
+
+# 或者直接输出到Elasticsearch
+# output.elasticsearch:
+#   hosts: ["http://elasticsearch:9200"]
+#   index: "cnc-tooling-logs-%{+yyyy.MM.dd}"
+
+# 日志配置
+logging.level: info
+logging.to_stderr: true

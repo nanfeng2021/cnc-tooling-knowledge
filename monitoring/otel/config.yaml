@@ -1,0 +1,63 @@
+# OpenTelemetry Collector 配置
+# 参考文档: https://opentelemetry.io/docs/collector/configuration/
+
+receivers:
+  otlp:
+    protocols:
+      grpc:
+        endpoint: 0.0.0.0:4317
+      http:
+        endpoint: 0.0.0.0:4318
+
+processors:
+  batch:
+    timeout: 1s
+    send_batch_size: 1024
+
+exporters:
+  # 控制台输出（调试用）
+  logging:
+    verbosity: detailed
+
+  # Prometheus 指标导出
+  prometheus:
+    endpoint: "0.0.0.0:8889"
+    namespace: "otel"
+    const_labels:
+      service: "cnc-tooling"
+
+  # Elasticsearch 导出（traces + logs 存储到 ES，Kibana 可视化）
+  elasticsearch:
+    endpoints: ["http://elasticsearch:9200"]
+    traces_index: "otel-traces"
+    logs_index: "otel-logs"
+    metrics_index: "otel-metrics"
+    sending_queue:
+      enabled: true
+      num_consumers: 10
+      queue_size: 1000
+    retry_on_failure:
+      enabled: true
+      initial_interval: 5s
+      max_interval: 30s
+      max_elapsed_time: 300s
+
+extensions:
+  health_check:
+    endpoint: 0.0.0.0:13133
+
+service:
+  extensions: [health_check]
+  pipelines:
+    traces:
+      receivers: [otlp]
+      processors: [batch]
+      exporters: [elasticsearch, logging]
+    metrics:
+      receivers: [otlp]
+      processors: [batch]
+      exporters: [prometheus]
+    logs:
+      receivers: [otlp]
+      processors: [batch]
+      exporters: [elasticsearch, logging]

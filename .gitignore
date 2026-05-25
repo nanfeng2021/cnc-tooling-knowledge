@@ -28,12 +28,15 @@ htmlcov/
 coverage.xml
 *.cover
 .hypothesis/
+
+# Output directories
 output/
+**/output/
 
 # Vector store (regenerate on startup)
 vector_store/
 
-# Data
+# Data (only keep structure)
 data/raw/*
 !data/raw/.gitkeep
 data/processed/*
@@ -55,3 +58,46 @@ Thumbs.db
 # Documentation build
 docs/_build/
 docs/.doctrees/
+
+# Node.js
+node_modules/
+package-lock.json
+
+# Frontend build
+frontend/dist/
+frontend/node_modules/
+
+# IDE/Tools
+.codebuddy/
+.qoder/
+
+# Cache
+.mypy_cache/
+.pytest_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Temp files
+test_connectivity.py
+start_server.sh
+vibe_images/
+*.tmp
+*.bak
+
+# Legacy code (removed)
+# src/
+# tests/
+
+# Legacy config files (removed)
+# pyproject.toml
+# requirements.txt
+# requirements-lite.txt
+# Dockerfile.backend.lite
+# mypy.ini
+# pytest.ini
+# package.json
+
+# Legacy documentation (removed)
+# ARCHITECTURE_REDESIGN.md
+# IMPLEMENTATION_SUMMARY.md

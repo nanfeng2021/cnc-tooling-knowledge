@@ -1,0 +1,2803 @@
+[
+  {
+    "id": "mill-001",
+    "name": "CoroMill Plura 10mm 方肩立铣刀",
+    "cutter_type": {
+      "category": "milling",
+      "subcategory": "milling_end_mill",
+      "variant": "square"
+    },
+    "material": {
+      "substrate": "carbide_K20",
+      "coating_type": "TiAlN",
+      "hardness_hrc": 92,
+      "iso_class": "K20"
+    },
+    "geometry": {
+      "diameter": 10,
+      "length": 75,
+      "flute_length": 30,
+      "number_of_flutes": 4,
+      "helix_angle": 38,
+      "corner_radius": 0
+    },
+    "recommended_parameters": {
+      "vc_steel": 200,
+      "vc_stainless": 130,
+      "vc_cast_iron": 280,
+      "vc_aluminum": 450,
+      "fz_steel": 0.06,
+      "fz_stainless": 0.05,
+      "fz_cast_iron": 0.07,
+      "fz_aluminum": 0.1,
+      "ap_max": 20,
+      "ae_max": 10,
+      "cooling_method": 2,
+      "max_l_d_ratio": 3.0,
+      "surface_finish_ra": 0.8,
+      "tolerance_grade": 7
+    },
+    "usage_guidelines": [
+      "适用于钢件和铸铁的粗精加工",
+      "推荐使用阿基米德螺旋线切入",
+      "冷却液推荐使用油基切削液"
+    ],
+    "compatible_materials": [
+      "P",
+      "K"
+    ],
+    "manufacturer_id": "mfr-sandvik",
+    "model_number": "R216.34-10040-APKT 4325",
+    "image_url": "/images/cutters/milling_end_mill.png"
+  },
+  {
+    "id": "mill-002",
+    "name": "CoroMill Plura 8mm 球头立铣刀",
+    "cutter_type": {
+      "category": "milling",
+      "subcategory": "milling_end_mill",
+      "variant": "ball_nose"
+    },
+    "material": {
+      "substrate": "carbide_K20",
+      "coating_type": "TiAlN",
+      "hardness_hrc": 92,
+      "iso_class": "K20"
+    },
+    "geometry": {
+      "diameter": 8,
+      "length": 70,
+      "flute_length": 20,
+      "number_of_flutes": 4,
+      "helix_angle": 35,
+      "corner_radius": 4
+    },
+    "recommended_parameters": {
+      "vc_steel": 180,
+      "vc_stainless": 110,
+      "vc_cast_iron": 250,
+      "vc_aluminum": 380,
+      "fz_steel": 0.04,
+      "fz_stainless": 0.035,
+      "fz_cast_iron": 0.05,
+      "fz_aluminum": 0.08,
+      "ap_max": 4,
+      "ae_max": 1.0,
+      "cooling_method": 2,
+      "max_l_d_ratio": 2.5,
+      "surface_finish_ra": 0.4,
+      "tolerance_grade": 7
+    },
+    "usage_guidelines": [
+      "适用于曲面精加工",
+      "3轴/5轴行切",
+      "小ae高Vc策略"
+    ],
+    "compatible_materials": [
+      "P",
+      "M",
+      "K",
+      "N"
+    ],
+    "manufacturer_id": "mfr-sandvik",
+    "model_number": "R216.34-08040-BK 4325",
+    "image_url": "/images/cutters/milling_end_mill.png"
+  },
+  {
+    "id": "mill-003",
+    "name": "A-SFT 12mm 方肩立铣刀",
+    "cutter_type": {
+      "category": "milling",
+      "subcategory": "milling_end_mill",
+      "variant": "square"
+    },
+    "material": {
+      "substrate": "carbide_P30",
+      "coating_type": "AlCrN",
+      "hardness_hrc": 90,
+      "iso_class": "P30"
+    },
+    "geometry": {
+      "diameter": 12,
+      "length": 89,
+      "flute_length": 35,
+      "number_of_flutes": 4,
+      "helix_angle": 30,
+      "corner_radius": 0
+    },
+    "recommended_parameters": {
+      "vc_steel": 170,
+      "vc_stainless": 110,
+      "vc_cast_iron": 220,
+      "fz_steel": 0.07,
+      "fz_stainless": 0.05,
+      "fz_cast_iron": 0.08,
+      "ap_max": 24,
+      "ae_max": 12,
+      "cooling_method": 2,
+      "max_l_d_ratio": 3.0,
+      "surface_finish_ra": 1.0,
+      "tolerance_grade": 8
+    },
+    "usage_guidelines": [
+      "钢件通用铣削",
+      "侧面/底面精加工"
+    ],
+    "compatible_materials": [
+      "P",
+      "M",
+      "K"
+    ],
+    "manufacturer_id": "mfr-osg",
+    "model_number": "A-SFT-12040-S30",
+    "image_url": "/images/cutters/milling_end_mill.png"
+  },
+  {
+    "id": "mill-004",
+    "name": "20mm 高进给立铣刀",
+    "cutter_type": {
+      "category": "milling",
+      "subcategory": "milling_end_mill",
+      "variant": "high_feed"
+    },
+    "material": {
+      "substrate": "carbide_P40",
+      "coating_type": "AlCrN",
+      "hardness_hrc": 91,
+      "iso_class": "P40"
+    },
+    "geometry": {
+      "diameter": 20,
+      "length": 100,
+      "flute_length": 25,
+      "number_of_flutes": 3,
+      "helix_angle": 10,
+      "corner_radius": 2
+    },
+    "recommended_parameters": {
+      "vc_steel": 200,
+      "vc_stainless": 130,
+      "vc_cast_iron": 280,
+      "vc_hardened": 110,
+      "fz_steel": 0.15,
+      "fz_stainless": 0.1,
+      "fz_cast_iron": 0.18,
+      "ap_max": 2.0,
+      "ae_max": 20,
+      "cooling_method": 2,
+      "max_l_d_ratio": 1.25,
+      "surface_finish_ra": 1.6,
+      "tolerance_grade": 9
+    },
+    "usage_guidelines": [
+      "高效粗加工",
+      "动态铣削/摆线铣策略",
+      "小ap大ae"
+    ],
+    "compatible_materials": [
+      "P",
+      "M",
+      "K",
+      "S",
+      "H"
+    ],
+    "manufacturer_id": "mfr-sandvik",
+    "model_number": "R220.53-20-09-5A 4240",
+    "image_url": "/images/cutters/milling_end_mill.png"
+  },
+  {
+    "id": "mill-005",
+    "name": "CoroMill 490 125mm 方肩面铣刀",
+    "cutter_type": {
+      "category": "milling",
+      "subcategory": "milling_face_mill",
+      "variant": "indexable"
+    },
+    "material": {
+      "substrate": "carbide_P25",
+      "coating_type": "TiAlN",
+      "hardness_hrc": 92,
+      "iso_class": "P25"
+    },
+    "geometry": {
+      "diameter": 125,
+      "length": 50,
+      "flute_length": 0,
+      "number_of_flutes": 8,
+      "helix_angle": 0,
+      "corner_radius": 0.8
+    },
+    "recommended_parameters": {
+      "vc_steel": 220,
+      "vc_stainless": 150,
+      "vc_cast_iron": 300,
+      "fz_steel": 0.15,
+      "fz_stainless": 0.12,
+      "fz_cast_iron": 0.18,
+      "ap_max": 8,
+      "ae_max": 100,
+      "cooling_method": 2,
+      "max_l_d_ratio": 0.4,
+      "surface_finish_ra": 0.8,
+      "tolerance_grade": 8
+    },
+    "usage_guidelines": [
+      "90°主偏角",
+      "大平面方肩铣削",
+      "台阶/侧面/底面加工"
+    ],
+    "compatible_materials": [
+      "P",
+      "M",
+      "K"
+    ],
+    "manufacturer_id": "mfr-sandvik",
+    "model_number": "R390-125Q40-11M",
+    "image_url": "/images/cutters/milling_face_mill.png"
+  },
+  {
+    "id": "mill-006",
+    "name": "16mm 粗铣立铣刀 波形刃",
+    "cutter_type": {
+      "category": "milling",
+      "subcategory": "milling_end_mill",
+      "variant": "roughing"
+    },
+    "material": {
+      "substrate": "carbide_P35",
+      "coating_type": "TiAlN",
+      "hardness_hrc": 91,
+      "iso_class": "P35"
+    },
+    "geometry": {
+      "diameter": 16,
+      "length": 100,
+      "flute_length": 40,
+      "number_of_flutes": 4,
+      "helix_angle": 35,
+      "corner_radius": 0
+    },
+    "recommended_parameters": {
+      "vc_steel": 130,
+      "vc_stainless": 90,
+      "vc_cast_iron": 200,
+      "fz_steel": 0.09,
+      "fz_stainless": 0.07,
+      "fz_cast_iron": 0.12,
+      "ap_max": 32,
+      "ae_max": 16,
+      "cooling_method": 2,
+      "max_l_d_ratio": 2.5,
+      "surface_finish_ra": 1.6,
+      "tolerance_grade": 9
+    },
+    "usage_guidelines": [
+      "钢件粗加工",
+      "波形刃大排屑",
+      "大切深高效"
+    ],
+    "compatible_materials": [
+      "P",
+      "K"
+    ],
+    "manufacturer_id": "mfr-zcc",
+    "model_number": "S26M16.0Z4-S35-L100",
+    "image_url": "/images/cutters/milling_end_mill.png"
+  },
+  {
+    "id": "mill-007",
+    "name": "6mm 微径立铣刀",
+    "cutter_type": {
+      "category": "milling",
+      "subcategory": "milling_end_mill",
+      "variant": "micro"
+    },
+    "material": {
+      "substrate": "carbide_K10",
+      "coating_type": "TiAlN",
+      "hardness_hrc": 93,
+      "iso_class": "K10"
+    },
+    "geometry": {
+      "diameter": 6,
+      "length": 57,
+      "flute_length": 12,
+      "number_of_flutes": 4,
+      "helix_angle": 30,
+      "corner_radius": 0
+    },
+    "recommended_parameters": {
+      "vc_steel": 120,
+      "vc_aluminum": 280,
+      "fz_steel": 0.015,
+      "fz_aluminum": 0.025,
+      "ap_max": 3,
+      "ae_max": 3,
+      "cooling_method": 1,
+      "max_l_d_ratio": 2.0,
+      "surface_finish_ra": 0.4,
+      "tolerance_grade": 7
+    },
+    "usage_guidelines": [
+      "微型腔体加工",
+      "细小特征精加工"
+    ],
+    "compatible_materials": [
+      "P",
+      "N"
+    ],
+    "manufacturer_id": "mfr-osg",
+    "model_number": "A-SFT-06040-S30",
+    "image_url": "/images/cutters/milling_end_mill.png"
+  },
+  {
+    "id": "mill-008",
+    "name": "10mm 圆鼻立铣刀",
+    "cutter_type": {
+      "category": "milling",
+      "subcategory": "milling_end_mill",
+      "variant": "bull_nose"
+    },
+    "material": {
+      "substrate": "carbide_P25",
+      "coating_type": "TiAlN",
+      "hardness_hrc": 92,
+      "iso_class": "P25"
+    },
+    "geometry": {
+      "diameter": 10,
+      "length": 75,
+      "flute_length": 25,
+      "number_of_flutes": 4,
+      "helix_angle": 35,
+      "corner_radius": 1
+    },
+    "recommended_parameters": {
+      "vc_steel": 190,
+      "vc_stainless": 120,
+      "vc_cast_iron": 260,
+      "fz_steel": 0.06,
+      "fz_stainless": 0.045,
+      "fz_cast_iron": 0.07,
+      "ap_max": 10,
+      "ae_max": 5,
+      "cooling_method": 2,
+      "max_l_d_ratio": 2.5,
+      "surface_finish_ra": 0.6,
+      "tolerance_grade": 7
+    },
+    "usage_guidelines": [
+      "底面精加工不留刀痕",
+      "re=1mm减少应力集中"
+    ],
+    "compatible_materials": [
+      "P",
+      "M",
+      "K"
+    ],
+    "manufacturer_id": "mfr-kennametal",
+    "model_number": "F3AA100AWL KCP10",
+    "image_url": "/images/cutters/milling_end_mill.png"
+  },
+  {
+    "id": "mill-009",
+    "name": "45° 倒角立铣刀",
+    "cutter_type": {
+      "category": "milling",
+      "subcategory": "milling_end_mill",
+      "variant": "chamfer"
+    },
+    "material": {
+      "substrate": "carbide_K20",
+      "coating_type": "TiN",
+      "hardness_hrc": 91,
+      "iso_class": "K20"
+    },
+    "geometry": {
+      "diameter": 12,
+      "length": 75,
+      "flute_length": 15,
+      "number_of_flutes": 4,
+      "helix_angle": 0,
+      "corner_radius": 0
+    },
+    "recommended_parameters": {
+      "vc_steel": 100,
+      "vc_aluminum": 220,
+      "fz_steel": 0.04,
+      "fz_aluminum": 0.07,
+      "ap_max": 3,
+      "ae_max": 6,
+      "cooling_method": 1,
+      "max_l_d_ratio": 1.25,
+      "surface_finish_ra": 1.6,
+      "tolerance_grade": 10
+    },
+    "usage_guidelines": [
+      "45°倒角",
+      "去毛刺"
+    ],
+    "compatible_materials": [
+      "P",
+      "N"
+    ],
+    "manufacturer_id": "mfr-zcc",
+    "model_number": "S45M12.0Z4-L75",
+    "image_url": "/images/cutters/milling_end_mill.png"
+  },
+  {
+    "id": "mill-010",
+    "name": "3mm 锥度立铣刀 2°",
+    "cutter_type": {
+      "category": "milling",
+      "subcategory": "milling_end_mill",
+      "variant": "taper"
+    },
+    "material": {
+      "substrate": "carbide_K10",
+      "coating_type": "TiAlN",
+      "hardness_hrc": 93,
+      "iso_class": "K10"
+    },
+    "geometry": {
+      "diameter": 3,
+      "length": 60,
+      "flute_length": 20,
+      "number_of_flutes": 4,
+      "helix_angle": 30,
+      "corner_radius": 0
+    },
+    "recommended_parameters": {
+      "vc_steel": 90,
+      "vc_aluminum": 220,
+      "fz_steel": 0.012,
+      "fz_aluminum": 0.025,
+      "ap_max": 10,
+      "ae_max": 1.5,
+      "cooling_method": 1,
+      "max_l_d_ratio": 6.7,
+      "surface_finish_ra": 0.6,
+      "tolerance_grade": 7
+    },
+    "usage_guidelines": [
+      "模具拔模斜面",
+      "锥孔加工"
+    ],
+    "compatible_materials": [
+      "P",
+      "N"
+    ],
+    "manufacturer_id": "mfr-zcc",
+    "model_number": "T02M03.0Z4-L60",
+    "image_url": "/images/cutters/milling_end_mill.png"
+  },
+  {
+    "id": "turn-001",
+    "name": "CoroTurn TR CNMG 120408 粗车外圆刀",
+    "cutter_type": {
+      "category": "turning",
+      "subcategory": "turning_external",
+      "variant": "roughing"
+    },
+    "material": {
+      "substrate": "carbide_P30",
+      "coating_type": "PVD_TiAlN",
+      "hardness_hrc": 91,
+      "iso_class": "P30"
+    },
+    "geometry": {
+      "diameter": 12.7,
+      "length": 125,
+      "flute_length": 0,
+      "number_of_flutes": 1,
+      "helix_angle": 0,
+      "corner_radius": 0.8
+    },
+    "recommended_parameters": {
+      "vc_steel": 220,
+      "vc_stainless": 150,
+      "vc_cast_iron": 200,
+      "fn_steel": 0.35,
+      "fn_stainless": 0.25,
+      "fn_cast_iron": 0.3,
+      "ap_max": 6,
+      "cooling_method": 2,
+      "max_l_d_ratio": 4.0,
+      "surface_finish_ra": 1.6,
+      "tolerance_grade": 8
+    },
+    "usage_guidelines": [
+      "钢件粗车",
+      "大切深高效率",
+      "负前角刀片"
+    ],
+    "compatible_materials": [
+      "P",
+      "M",
+      "K"
+    ],
+    "manufacturer_id": "mfr-sandvik",
+    "model_number": "CNMG 120408-PM 4325",
+    "image_url": "/images/cutters/turning_external.png"
+  },
+  {
+    "id": "turn-002",
+    "name": "CoroTurn TR DNMG 110404 精车外圆刀",
+    "cutter_type": {
+      "category": "turning",
+      "subcategory": "turning_external",
+      "variant": "finishing"
+    },
+    "material": {
+      "substrate": "carbide_P10",
+      "coating_type": "PVD_TiAlN",
+      "hardness_hrc": 93,
+      "iso_class": "P10"
+    },
+    "geometry": {
+      "diameter": 9.5,
+      "length": 125,
+      "flute_length": 0,
+      "number_of_flutes": 1,
+      "helix_angle": 0,
+      "corner_radius": 0.4
+    },
+    "recommended_parameters": {
+      "vc_steel": 300,
+      "vc_stainless": 200,
+      "fn_steel": 0.15,
+      "fn_stainless": 0.1,
+      "ap_max": 1.5,
+      "cooling_method": 2,
+      "max_l_d_ratio": 4.0,
+      "surface_finish_ra": 0.4,
+      "tolerance_grade": 6
+    },
+    "usage_guidelines": [
+      "精车高光洁度",
+      "Wiper刀片",
+      "正前角"
+    ],
+    "compatible_materials": [
+      "P",
+      "M"
+    ],
+    "manufacturer_id": "mfr-sandvik",
+    "model_number": "DNMG 110404-WF 1125",
+    "image_url": "/images/cutters/turning_external.png"
+  },
+  {
+    "id": "turn-003",
+    "name": "CoroTurn 107 内孔车刀 CCMT 06T304",
+    "cutter_type": {
+      "category": "turning",
+      "subcategory": "turning_internal",
+      "variant": "through_hole"
+    },
+    "material": {
+      "substrate": "carbide_P20",
+      "coating_type": "PVD_TiAlN",
+      "hardness_hrc": 92,
+      "iso_class": "P20"
+    },
+    "geometry": {
+      "diameter": 6.35,
+      "length": 150,
+      "flute_length": 0,
+      "number_of_flutes": 1,
+      "helix_angle": 0,
+      "corner_radius": 0.4
+    },
+    "recommended_parameters": {
+      "vc_steel": 220,
+      "vc_stainless": 140,
+      "fn_steel": 0.15,
+      "fn_stainless": 0.1,
+      "ap_max": 2,
+      "cooling_method": 3,
+      "max_l_d_ratio": 4.0,
+      "surface_finish_ra": 0.8,
+      "tolerance_grade": 7
+    },
+    "usage_guidelines": [
+      "通孔内孔精加工",
+      "短悬伸优先",
+      "正前角排屑"
+    ],
+    "compatible_materials": [
+      "P",
+      "M"
+    ],
+    "manufacturer_id": "mfr-sandvik",
+    "model_number": "CCMT 06T304-PM 1125",
+    "image_url": "/images/cutters/turning_internal.png"
+  },
+  {
+    "id": "turn-004",
+    "name": "CoroCut 切断刀 3mm",
+    "cutter_type": {
+      "category": "turning",
+      "subcategory": "turning_grooving",
+      "variant": "parting"
+    },
+    "material": {
+      "substrate": "carbide_P25",
+      "coating_type": "PVD_TiAlN",
+      "hardness_hrc": 92,
+      "iso_class": "P25"
+    },
+    "geometry": {
+      "diameter": 3,
+      "length": 100,
+      "flute_length": 0,
+      "number_of_flutes": 1,
+      "helix_angle": 0,
+      "corner_radius": 0.1
+    },
+    "recommended_parameters": {
+      "vc_steel": 160,
+      "vc_stainless": 110,
+      "fn_steel": 0.1,
+      "fn_stainless": 0.08,
+      "ap_max": 25,
+      "cooling_method": 2,
+      "max_l_d_ratio": 3.0,
+      "surface_finish_ra": 1.6,
+      "tolerance_grade": 8
+    },
+    "usage_guidelines": [
+      "逐步降fz",
+      "刀宽3mm",
+      "刚性切断"
+    ],
+    "compatible_materials": [
+      "P",
+      "M"
+    ],
+    "manufacturer_id": "mfr-sandvik",
+    "model_number": "N123H2-0300-0003-GM 4325",
+    "image_url": "/images/cutters/turning_grooving.png"
+  },
+  {
+    "id": "turn-005",
+    "name": "Beyond KSH 16mm 外圆切槽刀",
+    "cutter_type": {
+      "category": "turning",
+      "subcategory": "turning_grooving",
+      "variant": "external"
+    },
+    "material": {
+      "substrate": "carbide_P25",
+      "coating_type": "PVD_AlTiN",
+      "hardness_hrc": 92,
+      "iso_class": "P25"
+    },
+    "geometry": {
+      "diameter": 16,
+      "length": 120,
+      "flute_length": 0,
+      "number_of_flutes": 1,
+      "helix_angle": 0,
+      "corner_radius": 0.2
+    },
+    "recommended_parameters": {
+      "vc_steel": 140,
+      "fn_steel": 0.1,
+      "ap_max": 16,
+      "cooling_method": 2,
+      "max_l_d_ratio": 2.0,
+      "surface_finish_ra": 1.2,
+      "tolerance_grade": 8
+    },
+    "usage_guidelines": [
+      "外圆环槽加工",
+      "槽宽±0.1mm"
+    ],
+    "compatible_materials": [
+      "P"
+    ],
+    "manufacturer_id": "mfr-kennametal",
+    "model_number": "A3G0800MO5P04DF KCP10",
+    "image_url": "/images/cutters/turning_grooving.png"
+  },
+  {
+    "id": "turn-006",
+    "name": "CoroThread 266 外螺纹车刀",
+    "cutter_type": {
+      "category": "turning",
+      "subcategory": "turning_threading",
+      "variant": "external"
+    },
+    "material": {
+      "substrate": "carbide_P15",
+      "coating_type": "PVD_TiAlN",
+      "hardness_hrc": 92,
+      "iso_class": "P15"
+    },
+    "geometry": {
+      "diameter": 16,
+      "length": 125,
+      "flute_length": 0,
+      "number_of_flutes": 1,
+      "helix_angle": 0,
+      "corner_radius": 0
+    },
+    "recommended_parameters": {
+      "vc_steel": 160,
+      "vc_stainless": 110,
+      "fn_steel": 1.5,
+      "cooling_method": 2,
+      "max_l_d_ratio": 3.0,
+      "surface_finish_ra": 1.6,
+      "tolerance_grade": 7
+    },
+    "usage_guidelines": [
+      "全牙型刀片效率高",
+      "多刀循环",
+      "右切"
+    ],
+    "compatible_materials": [
+      "P",
+      "M"
+    ],
+    "manufacturer_id": "mfr-sandvik",
+    "model_number": "266RG-16MM01-150G 1125",
+    "image_url": "/images/cutters/turning_threading.png"
+  },
+  {
+    "id": "turn-007",
+    "name": "ZCC YB6315 粗车外圆刀 CNMG 120412",
+    "cutter_type": {
+      "category": "turning",
+      "subcategory": "turning_external",
+      "variant": "roughing"
+    },
+    "material": {
+      "substrate": "carbide_P30",
+      "coating_type": "CVD_TiAlN",
+      "hardness_hrc": 91,
+      "iso_class": "P30"
+    },
+    "geometry": {
+      "diameter": 12.7,
+      "length": 125,
+      "flute_length": 0,
+      "number_of_flutes": 1,
+      "helix_angle": 0,
+      "corner_radius": 1.2
+    },
+    "recommended_parameters": {
+      "vc_steel": 190,
+      "vc_cast_iron": 160,
+      "fn_steel": 0.4,
+      "fn_cast_iron": 0.35,
+      "ap_max": 8,
+      "cooling_method": 2,
+      "max_l_d_ratio": 4.0,
+      "surface_finish_ra": 2.0,
+      "tolerance_grade": 9
+    },
+    "usage_guidelines": [
+      "国产材质性价比高",
+      "钢件粗车"
+    ],
+    "compatible_materials": [
+      "P",
+      "K"
+    ],
+    "manufacturer_id": "mfr-zcc",
+    "model_number": "CNMG 120412-PM YB6315",
+    "image_url": "/images/cutters/turning_external.png"
+  },
+  {
+    "id": "turn-008",
+    "name": "CoroTurn Prime 高效车削刀片",
+    "cutter_type": {
+      "category": "turning",
+      "subcategory": "turning_external",
+      "variant": "light"
+    },
+    "material": {
+      "substrate": "carbide_P20",
+      "coating_type": "PVD_TiAlN",
+      "hardness_hrc": 92,
+      "iso_class": "P20"
+    },
+    "geometry": {
+      "diameter": 12.7,
+      "length": 125,
+      "flute_length": 0,
+      "number_of_flutes": 1,
+      "helix_angle": 0,
+      "corner_radius": 0.8
+    },
+    "recommended_parameters": {
+      "vc_steel": 270,
+      "fn_steel": 0.2,
+      "ap_max": 3,
+      "cooling_method": 2,
+      "max_l_d_ratio": 4.0,
+      "surface_finish_ra": 0.8,
+      "tolerance_grade": 7
+    },
+    "usage_guidelines": [
+      "轻切削高效",
+      "Wiper刀片"
+    ],
+    "compatible_materials": [
+      "P"
+    ],
+    "manufacturer_id": "mfr-sandvik",
+    "model_number": "C6-LBUM060605P-GM 4325",
+    "image_url": "/images/cutters/turning_external.png"
+  },
+  {
+    "id": "thread-001",
+    "name": "EX-GOLD M8×1.25 螺旋槽丝锥",
+    "cutter_type": {
+      "category": "threading",
+      "subcategory": "threading_tap",
+      "variant": "spiral_flute"
+    },
+    "material": {
+      "substrate": "hss_cobalt",
+      "coating_type": "TiN",
+      "hardness_hrc": 67,
+      "iso_class": "HSS-Co"
+    },
+    "geometry": {
+      "diameter": 8,
+      "length": 70,
+      "flute_length": 30,
+      "number_of_flutes": 3,
+      "helix_angle": 35,
+      "corner_radius": 0
+    },
+    "recommended_parameters": {
+      "vc_steel": 18,
+      "vc_stainless": 10,
+      "fn_steel": 1.25,
+      "cooling_method": 2,
+      "max_l_d_ratio": 2.0,
+      "surface_finish_ra": 1.6,
+      "tolerance_grade": 6
+    },
+    "usage_guidelines": [
+      "盲孔攻丝专用",
+      "螺旋槽向前排屑",
+      "钢/不锈钢通吃"
+    ],
+    "compatible_materials": [
+      "P",
+      "M"
+    ],
+    "manufacturer_id": "mfr-osg",
+    "model_number": "M8×1.25-SPO-H3",
+    "image_url": "/images/cutters/threading_tap.png"
+  },
+  {
+    "id": "thread-002",
+    "name": "A-DOOZ M10×1.5 螺尖丝锥",
+    "cutter_type": {
+      "category": "threading",
+      "subcategory": "threading_tap",
+      "variant": "spiral_point"
+    },
+    "material": {
+      "substrate": "hss_cobalt",
+      "coating_type": "TiN",
+      "hardness_hrc": 67,
+      "iso_class": "HSS-Co"
+    },
+    "geometry": {
+      "diameter": 10,
+      "length": 80,
+      "flute_length": 35,
+      "number_of_flutes": 3,
+      "helix_angle": 0,
+      "corner_radius": 0
+    },
+    "recommended_parameters": {
+      "vc_steel": 22,
+      "vc_cast_iron": 18,
+      "fn_steel": 1.5,
+      "cooling_method": 2,
+      "max_l_d_ratio": 2.5,
+      "surface_finish_ra": 1.6,
+      "tolerance_grade": 6
+    },
+    "usage_guidelines": [
+      "通孔高效攻丝",
+      "螺尖向后排屑",
+      "速度高于螺旋槽"
+    ],
+    "compatible_materials": [
+      "P",
+      "K"
+    ],
+    "manufacturer_id": "mfr-osg",
+    "model_number": "M10×1.5-SPO-H3",
+    "image_url": "/images/cutters/threading_tap.png"
+  },
+  {
+    "id": "thread-003",
+    "name": "A-FT M6×1.0 挤压丝锥",
+    "cutter_type": {
+      "category": "threading",
+      "subcategory": "threading_tap",
+      "variant": "forming"
+    },
+    "material": {
+      "substrate": "carbide_P25",
+      "coating_type": "TiAlN",
+      "hardness_hrc": 91,
+      "iso_class": "P25"
+    },
+    "geometry": {
+      "diameter": 6,
+      "length": 55,
+      "flute_length": 0,
+      "number_of_flutes": 1,
+      "helix_angle": 0,
+      "corner_radius": 0
+    },
+    "recommended_parameters": {
+      "vc_aluminum": 35,
+      "vc_steel": 18,
+      "fn_steel": 1.0,
+      "cooling_method": 2,
+      "max_l_d_ratio": 2.0,
+      "surface_finish_ra": 0.8,
+      "tolerance_grade": 6
+    },
+    "usage_guidelines": [
+      "无屑挤压成形",
+      "铝合金/软钢盲孔",
+      "底孔需精确计算"
+    ],
+    "compatible_materials": [
+      "P",
+      "N"
+    ],
+    "manufacturer_id": "mfr-osg",
+    "model_number": "M6×1.0-FT",
+    "image_url": "/images/cutters/threading_tap.png"
+  },
+  {
+    "id": "thread-004",
+    "name": "A-SFT M12×1.75 直槽丝锥",
+    "cutter_type": {
+      "category": "threading",
+      "subcategory": "threading_tap",
+      "variant": "straight_flute"
+    },
+    "material": {
+      "substrate": "hss_cobalt",
+      "coating_type": "TiN",
+      "hardness_hrc": 67,
+      "iso_class": "HSS-Co"
+    },
+    "geometry": {
+      "diameter": 12,
+      "length": 90,
+      "flute_length": 40,
+      "number_of_flutes": 3,
+      "helix_angle": 0,
+      "corner_radius": 0
+    },
+    "recommended_parameters": {
+      "vc_steel": 15,
+      "vc_cast_iron": 12,
+      "fn_steel": 1.75,
+      "cooling_method": 2,
+      "max_l_d_ratio": 2.5,
+      "surface_finish_ra": 1.6,
+      "tolerance_grade": 7
+    },
+    "usage_guidelines": [
+      "通用通孔攻丝",
+      "直槽设计",
+      "经济型选择"
+    ],
+    "compatible_materials": [
+      "P",
+      "K"
+    ],
+    "manufacturer_id": "mfr-osg",
+    "model_number": "M12×1.75-SFT-H3",
+    "image_url": "/images/cutters/threading_tap.png"
+  },
+  {
+    "id": "thread-005",
+    "name": "HS M8×1.25 机用丝锥",
+    "cutter_type": {
+      "category": "threading",
+      "subcategory": "threading_tap",
+      "variant": "machine"
+    },
+    "material": {
+      "substrate": "hss",
+      "coating_type": "TiN",
+      "hardness_hrc": 64,
+      "iso_class": "HSS"
+    },
+    "geometry": {
+      "diameter": 8,
+      "length": 70,
+      "flute_length": 28,
+      "number_of_flutes": 3,
+      "helix_angle": 0,
+      "corner_radius": 0
+    },
+    "recommended_parameters": {
+      "vc_steel": 12,
+      "fn_steel": 1.25,
+      "cooling_method": 2,
+      "max_l_d_ratio": 2.0,
+      "surface_finish_ra": 2.0,
+      "tolerance_grade": 7
+    },
+    "usage_guidelines": [
+      "通用机用丝锥",
+      "经济型HSS",
+      "刚性攻丝"
+    ],
+    "compatible_materials": [
+      "P"
+    ],
+    "manufacturer_id": "mfr-yamawa",
+    "model_number": "HS-M8×1.25",
+    "image_url": "/images/cutters/threading_tap.png"
+  },
+  {
+    "id": "thread-006",
+    "name": "ST M10×1.5 螺旋槽丝锥",
+    "cutter_type": {
+      "category": "threading",
+      "subcategory": "threading_tap",
+      "variant": "spiral_flute"
+    },
+    "material": {
+      "substrate": "hss_cobalt",
+      "coating_type": "TiN",
+      "hardness_hrc": 67,
+      "iso_class": "HSS-Co"
+    },
+    "geometry": {
+      "diameter": 10,
+      "length": 80,
+      "flute_length": 32,
+      "number_of_flutes": 3,
+      "helix_angle": 35,
+      "corner_radius": 0
+    },
+    "recommended_parameters": {
+      "vc_steel": 15,
+      "vc_stainless": 8,
+      "fn_steel": 1.5,
+      "cooling_method": 2,
+      "max_l_d_ratio": 2.0,
+      "surface_finish_ra": 1.6,
+      "tolerance_grade": 6
+    },
+    "usage_guidelines": [
+      "盲孔专用",
+      "山和螺旋槽",
+      "不锈钢适用"
+    ],
+    "compatible_materials": [
+      "P",
+      "M"
+    ],
+    "manufacturer_id": "mfr-yamawa",
+    "model_number": "ST-M10×1.5",
+    "image_url": "/images/cutters/threading_tap.png"
+  },
+  {
+    "id": "thread-007",
+    "name": "G1/2\" 管螺纹丝锥 BSPP",
+    "cutter_type": {
+      "category": "threading",
+      "subcategory": "threading_tap",
+      "variant": "pipe"
+    },
+    "material": {
+      "substrate": "hss_cobalt",
+      "coating_type": "TiN",
+      "hardness_hrc": 67,
+      "iso_class": "HSS-Co"
+    },
+    "geometry": {
+      "diameter": 20.95,
+      "length": 100,
+      "flute_length": 35,
+      "number_of_flutes": 4,
+      "helix_angle": 0,
+      "corner_radius": 0
+    },
+    "recommended_parameters": {
+      "vc_steel": 10,
+      "fn_steel": 1.814,
+      "cooling_method": 2,
+      "max_l_d_ratio": 1.5,
+      "surface_finish_ra": 2.0,
+      "tolerance_grade": 7
+    },
+    "usage_guidelines": [
+      "G1/2\"管螺纹",
+      "BSPP直管螺纹",
+      "液压管路"
+    ],
+    "compatible_materials": [
+      "P"
+    ],
+    "manufacturer_id": "mfr-yamawa",
+    "model_number": "G1/2-BSPP",
+    "image_url": "/images/cutters/threading_tap.png"
+  },
+  {
+    "id": "thread-008",
+    "name": "M10×1.5 圆板牙",
+    "cutter_type": {
+      "category": "threading",
+      "subcategory": "threading_die",
+      "variant": "round_die"
+    },
+    "material": {
+      "substrate": "hss",
+      "coating_type": "TiN",
+      "hardness_hrc": 64,
+      "iso_class": "HSS"
+    },
+    "geometry": {
+      "diameter": 10,
+      "length": 18,
+      "flute_length": 10,
+      "number_of_flutes": 4,
+      "helix_angle": 0,
+      "corner_radius": 0
+    },
+    "recommended_parameters": {
+      "vc_steel": 10,
+      "fn_steel": 1.5,
+      "cooling_method": 0,
+      "max_l_d_ratio": 1.0,
+      "surface_finish_ra": 3.2,
+      "tolerance_grade": 8
+    },
+    "usage_guidelines": [
+      "外螺纹加工",
+      "手动/机用",
+      "修配/小批量"
+    ],
+    "compatible_materials": [
+      "P"
+    ],
+    "manufacturer_id": "mfr-hagong",
+    "model_number": "RD-M10×1.5",
+    "image_url": "/images/cutters/threading_die.png"
+  },
+  {
+    "id": "thread-009",
+    "name": "TM1 单刃螺纹铣刀 M8×1.25",
+    "cutter_type": {
+      "category": "threading",
+      "subcategory": "threading_mill",
+      "variant": "single_point"
+    },
+    "material": {
+      "substrate": "carbide_K20",
+      "coating_type": "TiAlN",
+      "hardness_hrc": 92,
+      "iso_class": "K20"
+    },
+    "geometry": {
+      "diameter": 6,
+      "length": 60,
+      "flute_length": 20,
+      "number_of_flutes": 1,
+      "helix_angle": 0,
+      "corner_radius": 0
+    },
+    "recommended_parameters": {
+      "vc_steel": 130,
+      "vc_stainless": 85,
+      "vc_aluminum": 320,
+      "fz_steel": 0.05,
+      "fz_aluminum": 0.1,
+      "cooling_method": 2,
+      "max_l_d_ratio": 3.3,
+      "surface_finish_ra": 0.8,
+      "tolerance_grade": 6
+    },
+    "usage_guidelines": [
+      "一把刀多螺距",
+      "多品种小批量",
+      "螺旋插补"
+    ],
+    "compatible_materials": [
+      "P",
+      "M",
+      "N"
+    ],
+    "manufacturer_id": "mfr-zcc",
+    "model_number": "TM1-M8×1.25-S06",
+    "image_url": "/images/cutters/threading_mill.png"
+  },
+  {
+    "id": "thread-010",
+    "name": "多刃螺纹铣刀 M10×1.5",
+    "cutter_type": {
+      "category": "threading",
+      "subcategory": "threading_mill",
+      "variant": "multi_point"
+    },
+    "material": {
+      "substrate": "carbide_K20",
+      "coating_type": "TiAlN",
+      "hardness_hrc": 92,
+      "iso_class": "K20"
+    },
+    "geometry": {
+      "diameter": 8,
+      "length": 70,
+      "flute_length": 25,
+      "number_of_flutes": 3,
+      "helix_angle": 0,
+      "corner_radius": 0
+    },
+    "recommended_parameters": {
+      "vc_steel": 160,
+      "vc_aluminum": 380,
+      "fz_steel": 0.05,
+      "fz_aluminum": 0.09,
+      "cooling_method": 2,
+      "max_l_d_ratio": 3.1,
+      "surface_finish_ra": 0.8,
+      "tolerance_grade": 6
+    },
+    "usage_guidelines": [
+      "多刃高效",
+      "固定螺距",
+      "大批量加工"
+    ],
+    "compatible_materials": [
+      "P",
+      "N"
+    ],
+    "manufacturer_id": "mfr-zcc",
+    "model_number": "TM3-M10×1.5-S08",
+    "image_url": "/images/cutters/threading_mill.png"
+  },
+  {
+    "id": "thread-011",
+    "name": "可转位螺纹铣刀 Φ25",
+    "cutter_type": {
+      "category": "threading",
+      "subcategory": "threading_mill",
+      "variant": "indexable"
+    },
+    "material": {
+      "substrate": "carbide_P25",
+      "coating_type": "TiAlN",
+      "hardness_hrc": 92,
+      "iso_class": "P25"
+    },
+    "geometry": {
+      "diameter": 25,
+      "length": 80,
+      "flute_length": 0,
+      "number_of_flutes": 2,
+      "helix_angle": 0,
+      "corner_radius": 0
+    },
+    "recommended_parameters": {
+      "vc_steel": 110,
+      "vc_stainless": 70,
+      "fz_steel": 0.08,
+      "fz_stainless": 0.06,
+      "cooling_method": 2,
+      "max_l_d_ratio": 2.0,
+      "surface_finish_ra": 1.2,
+      "tolerance_grade": 7
+    },
+    "usage_guidelines": [
+      "大径螺纹>M30",
+      "机夹刀片",
+      "高效螺纹铣削"
+    ],
+    "compatible_materials": [
+      "P",
+      "M"
+    ],
+    "manufacturer_id": "mfr-sandvik",
+    "model_number": "R166.4G-25MM02-GC 1125",
+    "image_url": "/images/cutters/threading_mill.png"
+  },
+  {
+    "id": "thread-012",
+    "name": "CoroThread 266 外螺纹车刀",
+    "cutter_type": {
+      "category": "threading",
+      "subcategory": "threading_turning",
+      "variant": "external"
+    },
+    "material": {
+      "substrate": "carbide_P15",
+      "coating_type": "TiAlN",
+      "hardness_hrc": 92,
+      "iso_class": "P15"
+    },
+    "geometry": {
+      "diameter": 16,
+      "length": 125,
+      "flute_length": 0,
+      "number_of_flutes": 1,
+      "helix_angle": 0,
+      "corner_radius": 0
+    },
+    "recommended_parameters": {
+      "vc_steel": 160,
+      "vc_stainless": 110,
+      "fn_steel": 1.5,
+      "cooling_method": 2,
+      "max_l_d_ratio": 3.0,
+      "surface_finish_ra": 1.6,
+      "tolerance_grade": 6
+    },
+    "usage_guidelines": [
+      "全牙型刀片效率高",
+      "多刀循环",
+      "60°公制螺纹"
+    ],
+    "compatible_materials": [
+      "P",
+      "M"
+    ],
+    "manufacturer_id": "mfr-sandvik",
+    "model_number": "266RG-16MM01-150G 1125",
+    "image_url": "/images/cutters/threading_turning.png"
+  },
+  {
+    "id": "thread-013",
+    "name": "内螺纹车刀 M16×2.0",
+    "cutter_type": {
+      "category": "threading",
+      "subcategory": "threading_turning",
+      "variant": "internal"
+    },
+    "material": {
+      "substrate": "carbide_P20",
+      "coating_type": "TiAlN",
+      "hardness_hrc": 92,
+      "iso_class": "P20"
+    },
+    "geometry": {
+      "diameter": 12,
+      "length": 150,
+      "flute_length": 0,
+      "number_of_flutes": 1,
+      "helix_angle": 0,
+      "corner_radius": 0
+    },
+    "recommended_parameters": {
+      "vc_steel": 130,
+      "fn_steel": 2.0,
+      "cooling_method": 3,
+      "max_l_d_ratio": 4.0,
+      "surface_finish_ra": 1.6,
+      "tolerance_grade": 7
+    },
+    "usage_guidelines": [
+      "内螺纹车削",
+      "螺母/内螺纹孔",
+      "短悬伸优先"
+    ],
+    "compatible_materials": [
+      "P"
+    ],
+    "manufacturer_id": "mfr-kennametal",
+    "model_number": "A16M1.5UN08008 KCP10",
+    "image_url": "/images/cutters/threading_turning.png"
+  },
+  {
+    "id": "gear-001",
+    "name": "AA级 齿轮滚刀 m2 α20° 单头",
+    "cutter_type": {
+      "category": "gear_cutting",
+      "subcategory": "gear_hob",
+      "variant": "standard"
+    },
+    "material": {
+      "substrate": "hss_cobalt",
+      "coating_type": "TiAlN",
+      "hardness_hrc": 67,
+      "iso_class": "HSS-Co"
+    },
+    "geometry": {
+      "diameter": 63,
+      "length": 80,
+      "flute_length": 0,
+      "number_of_flutes": 12,
+      "helix_angle": 0,
+      "corner_radius": 0
+    },
+    "recommended_parameters": {
+      "vc_steel": 55,
+      "fn_steel": 2.0,
+      "module": 2,
+      "pressure_angle": 20,
+      "number_of_starts": 1,
+      "cooling_method": 2,
+      "max_l_d_ratio": 1.3,
+      "surface_finish_ra": 1.6,
+      "tolerance_grade": 5
+    },
+    "usage_guidelines": [
+      "AA级精密滚齿",
+      "5-6级齿轮",
+      "单头最高精度"
+    ],
+    "compatible_materials": [
+      "P"
+    ],
+    "manufacturer_id": "mfr-hagong",
+    "model_number": "AA m2 α20° R 1 Φ63 Φ27",
+    "image_url": "/images/cutters/gear_hob.png"
+  },
+  {
+    "id": "gear-002",
+    "name": "A级 齿轮滚刀 m3 α20° 双头",
+    "cutter_type": {
+      "category": "gear_cutting",
+      "subcategory": "gear_hob",
+      "variant": "standard"
+    },
+    "material": {
+      "substrate": "hss_cobalt",
+      "coating_type": "TiN",
+      "hardness_hrc": 67,
+      "iso_class": "HSS-Co"
+    },
+    "geometry": {
+      "diameter": 75,
+      "length": 95,
+      "flute_length": 0,
+      "number_of_flutes": 10,
+      "helix_angle": 0,
+      "corner_radius": 0
+    },
+    "recommended_parameters": {
+      "vc_steel": 50,
+      "fn_steel": 3.0,
+      "module": 3,
+      "pressure_angle": 20,
+      "number_of_starts": 2,
+      "cooling_method": 2,
+      "max_l_d_ratio": 1.3,
+      "surface_finish_ra": 2.0,
+      "tolerance_grade": 6
+    },
+    "usage_guidelines": [
+      "A级通用滚齿",
+      "6-7级齿轮",
+      "双头效率×2"
+    ],
+    "compatible_materials": [
+      "P"
+    ],
+    "manufacturer_id": "mfr-hanjiang",
+    "model_number": "A m3 α20° R 2 Φ75 Φ32",
+    "image_url": "/images/cutters/gear_hob.png"
+  },
+  {
+    "id": "gear-003",
+    "name": "剃前滚刀 m2.5 α20°",
+    "cutter_type": {
+      "category": "gear_cutting",
+      "subcategory": "gear_hob",
+      "variant": "pre_shave"
+    },
+    "material": {
+      "substrate": "hss_cobalt",
+      "coating_type": "TiN",
+      "hardness_hrc": 67,
+      "iso_class": "HSS-Co"
+    },
+    "geometry": {
+      "diameter": 70,
+      "length": 85,
+      "flute_length": 0,
+      "number_of_flutes": 12,
+      "helix_angle": 0,
+      "corner_radius": 0
+    },
+    "recommended_parameters": {
+      "vc_steel": 55,
+      "fn_steel": 2.5,
+      "module": 2.5,
+      "pressure_angle": 20,
+      "number_of_starts": 1,
+      "cooling_method": 2,
+      "max_l_d_ratio": 1.2,
+      "surface_finish_ra": 2.0,
+      "tolerance_grade": 6
+    },
+    "usage_guidelines": [
+      "留剃齿余量",
+      "滚齿→剃齿工序链",
+      "齿形预留量0.03-0.08mm"
+    ],
+    "compatible_materials": [
+      "P"
+    ],
+    "manufacturer_id": "mfr-hagong",
+    "model_number": "PS m2.5 α20° R 1 Φ70 Φ27",
+    "image_url": "/images/cutters/gear_hob.png"
+  },
+  {
+    "id": "gear-004",
+    "name": "磨前滚刀 m4 α20°",
+    "cutter_type": {
+      "category": "gear_cutting",
+      "subcategory": "gear_hob",
+      "variant": "pre_grind"
+    },
+    "material": {
+      "substrate": "hss_cobalt",
+      "coating_type": "TiN",
+      "hardness_hrc": 67,
+      "iso_class": "HSS-Co"
+    },
+    "geometry": {
+      "diameter": 90,
+      "length": 110,
+      "flute_length": 0,
+      "number_of_flutes": 10,
+      "helix_angle": 0,
+      "corner_radius": 0
+    },
+    "recommended_parameters": {
+      "vc_steel": 40,
+      "fn_steel": 3.5,
+      "module": 4,
+      "pressure_angle": 20,
+      "number_of_starts": 1,
+      "cooling_method": 2,
+      "max_l_d_ratio": 1.2,
+      "surface_finish_ra": 2.5,
+      "tolerance_grade": 7
+    },
+    "usage_guidelines": [
+      "留磨削余量",
+      "滚齿→热处理→磨齿",
+      "硬齿面齿轮"
+    ],
+    "compatible_materials": [
+      "P"
+    ],
+    "manufacturer_id": "mfr-hanjiang",
+    "model_number": "PG m4 α20° R 1 Φ90 Φ40",
+    "image_url": "/images/cutters/gear_hob.png"
+  },
+  {
+    "id": "gear-005",
+    "name": "蜗轮滚刀 m5 单头 右旋",
+    "cutter_type": {
+      "category": "gear_cutting",
+      "subcategory": "gear_hob",
+      "variant": "worm_wheel"
+    },
+    "material": {
+      "substrate": "hss_cobalt",
+      "coating_type": "TiAlN",
+      "hardness_hrc": 67,
+      "iso_class": "HSS-Co"
+    },
+    "geometry": {
+      "diameter": 100,
+      "length": 120,
+      "flute_length": 0,
+      "number_of_flutes": 10,
+      "helix_angle": 0,
+      "corner_radius": 0
+    },
+    "recommended_parameters": {
+      "vc_steel": 35,
+      "fn_steel": 4.0,
+      "module": 5,
+      "pressure_angle": 20,
+      "number_of_starts": 1,
+      "cooling_method": 2,
+      "max_l_d_ratio": 1.2,
+      "surface_finish_ra": 2.0,
+      "tolerance_grade": 6
+    },
+    "usage_guidelines": [
+      "蜗轮副专用",
+      "需与蜗杆参数匹配",
+      "径向/切向进给"
+    ],
+    "compatible_materials": [
+      "P"
+    ],
+    "manufacturer_id": "mfr-samputensili",
+    "model_number": "WW m5 α20° R 1 Φ100 Φ40",
+    "image_url": "/images/cutters/gear_hob.png"
+  },
+  {
+    "id": "gear-006",
+    "name": "渐开线花键滚刀 m2 α30°",
+    "cutter_type": {
+      "category": "gear_cutting",
+      "subcategory": "gear_hob",
+      "variant": "spline"
+    },
+    "material": {
+      "substrate": "hss_cobalt",
+      "coating_type": "TiN",
+      "hardness_hrc": 67,
+      "iso_class": "HSS-Co"
+    },
+    "geometry": {
+      "diameter": 63,
+      "length": 80,
+      "flute_length": 0,
+      "number_of_flutes": 12,
+      "helix_angle": 0,
+      "corner_radius": 0
+    },
+    "recommended_parameters": {
+      "vc_steel": 50,
+      "fn_steel": 1.8,
+      "module": 2,
+      "pressure_angle": 30,
+      "number_of_starts": 1,
+      "cooling_method": 2,
+      "max_l_d_ratio": 1.3,
+      "surface_finish_ra": 1.6,
+      "tolerance_grade": 6
+    },
+    "usage_guidelines": [
+      "渐开线花键",
+      "30°压力角",
+      "花键轴加工"
+    ],
+    "compatible_materials": [
+      "P"
+    ],
+    "manufacturer_id": "mfr-hanjiang",
+    "model_number": "SP m2 α30° R 1 Φ63 Φ27",
+    "image_url": "/images/cutters/gear_hob.png"
+  },
+  {
+    "id": "gear-007",
+    "name": "盘形插齿刀 m2 z50 A级",
+    "cutter_type": {
+      "category": "gear_cutting",
+      "subcategory": "gear_shaper",
+      "variant": "disc"
+    },
+    "material": {
+      "substrate": "hss_cobalt",
+      "coating_type": "TiN",
+      "hardness_hrc": 67,
+      "iso_class": "HSS-Co"
+    },
+    "geometry": {
+      "diameter": 100,
+      "length": 30,
+      "flute_length": 0,
+      "number_of_flutes": 1,
+      "helix_angle": 0,
+      "corner_radius": 0
+    },
+    "recommended_parameters": {
+      "vc_steel": 38,
+      "fn_steel": 0.3,
+      "module": 2,
+      "pressure_angle": 20,
+      "cooling_method": 2,
+      "max_l_d_ratio": 0.3,
+      "surface_finish_ra": 1.6,
+      "tolerance_grade": 6
+    },
+    "usage_guidelines": [
+      "外齿轮插齿",
+      "A级精度",
+      "盘形安装"
+    ],
+    "compatible_materials": [
+      "P"
+    ],
+    "manufacturer_id": "mfr-hagong",
+    "model_number": "A m2 z50 Φ100 Φ31.743",
+    "image_url": "/images/cutters/gear_shaper.png"
+  },
+  {
+    "id": "gear-008",
+    "name": "碗形插齿刀 m2.5 z36 A级",
+    "cutter_type": {
+      "category": "gear_cutting",
+      "subcategory": "gear_shaper",
+      "variant": "bowl"
+    },
+    "material": {
+      "substrate": "hss_cobalt",
+      "coating_type": "TiN",
+      "hardness_hrc": 67,
+      "iso_class": "HSS-Co"
+    },
+    "geometry": {
+      "diameter": 90,
+      "length": 35,
+      "flute_length": 0,
+      "number_of_flutes": 1,
+      "helix_angle": 0,
+      "corner_radius": 0
+    },
+    "recommended_parameters": {
+      "vc_steel": 33,
+      "fn_steel": 0.25,
+      "module": 2.5,
+      "pressure_angle": 20,
+      "cooling_method": 2,
+      "max_l_d_ratio": 0.4,
+      "surface_finish_ra": 1.6,
+      "tolerance_grade": 6
+    },
+    "usage_guidelines": [
+      "内齿轮/联轴齿轮",
+      "碗形螺母压紧",
+      "插内齿"
+    ],
+    "compatible_materials": [
+      "P"
+    ],
+    "manufacturer_id": "mfr-hagong",
+    "model_number": "A m2.5 z36 Φ90 Φ31.743-BOWL",
+    "image_url": "/images/cutters/gear_shaper.png"
+  },
+  {
+    "id": "gear-009",
+    "name": "锥柄插齿刀 m1.5 z40",
+    "cutter_type": {
+      "category": "gear_cutting",
+      "subcategory": "gear_shaper",
+      "variant": "taper_shank"
+    },
+    "material": {
+      "substrate": "hss_cobalt",
+      "coating_type": "TiN",
+      "hardness_hrc": 67,
+      "iso_class": "HSS-Co"
+    },
+    "geometry": {
+      "diameter": 60,
+      "length": 50,
+      "flute_length": 0,
+      "number_of_flutes": 1,
+      "helix_angle": 0,
+      "corner_radius": 0
+    },
+    "recommended_parameters": {
+      "vc_steel": 38,
+      "fn_steel": 0.2,
+      "module": 1.5,
+      "pressure_angle": 20,
+      "cooling_method": 2,
+      "max_l_d_ratio": 0.8,
+      "surface_finish_ra": 1.6,
+      "tolerance_grade": 7
+    },
+    "usage_guidelines": [
+      "内齿轮插齿",
+      "锥柄直插主轴",
+      "小径内齿轮"
+    ],
+    "compatible_materials": [
+      "P"
+    ],
+    "manufacturer_id": "mfr-samputensili",
+    "model_number": "B m1.5 z40 Φ60-MT3",
+    "image_url": "/images/cutters/gear_shaper.png"
+  },
+  {
+    "id": "gear-010",
+    "name": "盘形剃齿刀 m2 z73 A级",
+    "cutter_type": {
+      "category": "gear_cutting",
+      "subcategory": "gear_shaving",
+      "variant": "disc"
+    },
+    "material": {
+      "substrate": "hss_cobalt",
+      "coating_type": "TiN",
+      "hardness_hrc": 67,
+      "iso_class": "HSS-Co"
+    },
+    "geometry": {
+      "diameter": 180,
+      "length": 25,
+      "flute_length": 0,
+      "number_of_flutes": 1,
+      "helix_angle": 15,
+      "corner_radius": 0
+    },
+    "recommended_parameters": {
+      "vc_steel": 110,
+      "fn_steel": 0.05,
+      "module": 2,
+      "pressure_angle": 20,
+      "cooling_method": 2,
+      "max_l_d_ratio": 0.14,
+      "surface_finish_ra": 0.4,
+      "tolerance_grade": 5
+    },
+    "usage_guidelines": [
+      "外齿轮精加工",
+      "热处理前剃齿",
+      "齿面开槽"
+    ],
+    "compatible_materials": [
+      "P"
+    ],
+    "manufacturer_id": "mfr-hagong",
+    "model_number": "A m2 z73 Φ180 Φ63.5",
+    "image_url": "/images/cutters/gear_shaving.png"
+  },
+  {
+    "id": "gear-011",
+    "name": "盘形齿轮铣刀 m3 5号",
+    "cutter_type": {
+      "category": "gear_cutting",
+      "subcategory": "gear_milling_cutter",
+      "variant": "disc"
+    },
+    "material": {
+      "substrate": "hss_cobalt",
+      "coating_type": "TiN",
+      "hardness_hrc": 67,
+      "iso_class": "HSS-Co"
+    },
+    "geometry": {
+      "diameter": 70,
+      "length": 12,
+      "flute_length": 0,
+      "number_of_flutes": 12,
+      "helix_angle": 0,
+      "corner_radius": 0
+    },
+    "recommended_parameters": {
+      "vc_steel": 22,
+      "fn_steel": 0.5,
+      "module": 3,
+      "pressure_angle": 20,
+      "cooling_method": 2,
+      "max_l_d_ratio": 0.17,
+      "surface_finish_ra": 3.2,
+      "tolerance_grade": 9
+    },
+    "usage_guidelines": [
+      "成形铣削齿轮",
+      "按号数选刀",
+      "单件小批量"
+    ],
+    "compatible_materials": [
+      "P"
+    ],
+    "manufacturer_id": "mfr-hagong",
+    "model_number": "GM m3 #5 Φ70",
+    "image_url": "/images/cutters/gear_milling_cutter.png"
+  },
+  {
+    "id": "gear-012",
+    "name": "指形齿轮铣刀 m10",
+    "cutter_type": {
+      "category": "gear_cutting",
+      "subcategory": "gear_milling_cutter",
+      "variant": "finger"
+    },
+    "material": {
+      "substrate": "hss_cobalt",
+      "coating_type": "TiN",
+      "hardness_hrc": 67,
+      "iso_class": "HSS-Co"
+    },
+    "geometry": {
+      "diameter": 50,
+      "length": 80,
+      "flute_length": 40,
+      "number_of_flutes": 6,
+      "helix_angle": 0,
+      "corner_radius": 0
+    },
+    "recommended_parameters": {
+      "vc_steel": 18,
+      "fn_steel": 0.3,
+      "module": 10,
+      "pressure_angle": 20,
+      "cooling_method": 2,
+      "max_l_d_ratio": 1.6,
+      "surface_finish_ra": 3.2,
+      "tolerance_grade": 9
+    },
+    "usage_guidelines": [
+      "大模数齿轮",
+      "指状成形铣削",
+      "单件加工"
+    ],
+    "compatible_materials": [
+      "P"
+    ],
+    "manufacturer_id": "mfr-hanjiang",
+    "model_number": "FG m10 Φ50-L80",
+    "image_url": "/images/cutters/gear_milling_cutter.png"
+  },
+  {
+    "id": "hole-001",
+    "name": "CoroDrill 860 Φ10 整体硬质合金钻头",
+    "cutter_type": {
+      "category": "hole_making",
+      "subcategory": "hole_drill",
+      "variant": "solid_carbide_drill"
+    },
+    "material": {
+      "substrate": "carbide_K20",
+      "coating_type": "TiAlN",
+      "hardness_hrc": 92,
+      "iso_class": "K20"
+    },
+    "geometry": {
+      "diameter": 10,
+      "length": 89,
+      "flute_length": 47,
+      "number_of_flutes": 2,
+      "helix_angle": 30,
+      "corner_radius": 0
+    },
+    "recommended_parameters": {
+      "vc_steel": 100,
+      "vc_stainless": 60,
+      "vc_cast_iron": 140,
+      "vc_aluminum": 220,
+      "fn_steel": 0.2,
+      "fn_stainless": 0.14,
+      "fn_cast_iron": 0.25,
+      "fn_aluminum": 0.35,
+      "point_angle": 140,
+      "cooling_method": 3,
+      "max_l_d_ratio": 5.0,
+      "surface_finish_ra": 1.6,
+      "tolerance_grade": 8
+    },
+    "usage_guidelines": [
+      "内冷通孔设计",
+      "140°顶角适合硬材",
+      "高速高效钻孔"
+    ],
+    "compatible_materials": [
+      "P",
+      "M",
+      "K",
+      "N"
+    ],
+    "manufacturer_id": "mfr-sandvik",
+    "model_number": "860.1-1000-047A0-PM 4240",
+    "image_url": "/images/cutters/hole_drill.png"
+  },
+  {
+    "id": "hole-002",
+    "name": "CoroDrill 880 Φ25 可转位钻头",
+    "cutter_type": {
+      "category": "hole_making",
+      "subcategory": "hole_drill",
+      "variant": "indexable_drill"
+    },
+    "material": {
+      "substrate": "carbide_P30",
+      "coating_type": "TiAlN",
+      "hardness_hrc": 91,
+      "iso_class": "P30"
+    },
+    "geometry": {
+      "diameter": 25,
+      "length": 56,
+      "flute_length": 0,
+      "number_of_flutes": 2,
+      "helix_angle": 0,
+      "corner_radius": 0
+    },
+    "recommended_parameters": {
+      "vc_steel": 80,
+      "vc_stainless": 50,
+      "vc_cast_iron": 110,
+      "fn_steel": 0.15,
+      "fn_stainless": 0.1,
+      "fn_cast_iron": 0.18,
+      "point_angle": 140,
+      "cooling_method": 3,
+      "max_l_d_ratio": 2.2,
+      "surface_finish_ra": 3.2,
+      "tolerance_grade": 10
+    },
+    "usage_guidelines": [
+      "机夹刀片高效钻孔",
+      "Φ15-80mm大径孔",
+      "无需刃磨"
+    ],
+    "compatible_materials": [
+      "P",
+      "M",
+      "K"
+    ],
+    "manufacturer_id": "mfr-sandvik",
+    "model_number": "880-D25-08-09R 4240",
+    "image_url": "/images/cutters/hole_drill.png"
+  },
+  {
+    "id": "hole-003",
+    "name": "A-DOOZ Φ8 油孔钻 整体硬质合金",
+    "cutter_type": {
+      "category": "hole_making",
+      "subcategory": "hole_drill",
+      "variant": "solid_carbide_drill"
+    },
+    "material": {
+      "substrate": "carbide_P25",
+      "coating_type": "AlCrN",
+      "hardness_hrc": 91,
+      "iso_class": "P25"
+    },
+    "geometry": {
+      "diameter": 8,
+      "length": 79,
+      "flute_length": 40,
+      "number_of_flutes": 2,
+      "helix_angle": 30,
+      "corner_radius": 0
+    },
+    "recommended_parameters": {
+      "vc_steel": 90,
+      "vc_stainless": 55,
+      "vc_aluminum": 200,
+      "fn_steel": 0.18,
+      "fn_stainless": 0.12,
+      "fn_aluminum": 0.28,
+      "point_angle": 130,
+      "cooling_method": 3,
+      "max_l_d_ratio": 5.0,
+      "surface_finish_ra": 1.6,
+      "tolerance_grade": 8
+    },
+    "usage_guidelines": [
+      "油孔内冷设计",
+      "深孔专用",
+      "不锈钢钻孔优秀"
+    ],
+    "compatible_materials": [
+      "P",
+      "M",
+      "N"
+    ],
+    "manufacturer_id": "mfr-osg",
+    "model_number": "A-DOOZ-08040-S30",
+    "image_url": "/images/cutters/hole_drill.png"
+  },
+  {
+    "id": "hole-004",
+    "name": "Φ6.8 麻花钻 HSS",
+    "cutter_type": {
+      "category": "hole_making",
+      "subcategory": "hole_drill",
+      "variant": "twist"
+    },
+    "material": {
+      "substrate": "hss_cobalt",
+      "coating_type": "TiN",
+      "hardness_hrc": 67,
+      "iso_class": "HSS-Co"
+    },
+    "geometry": {
+      "diameter": 6.8,
+      "length": 79,
+      "flute_length": 42,
+      "number_of_flutes": 2,
+      "helix_angle": 30,
+      "corner_radius": 0
+    },
+    "recommended_parameters": {
+      "vc_steel": 35,
+      "vc_stainless": 18,
+      "vc_cast_iron": 50,
+      "fn_steel": 0.14,
+      "fn_stainless": 0.1,
+      "fn_cast_iron": 0.18,
+      "point_angle": 118,
+      "cooling_method": 2,
+      "max_l_d_ratio": 5.0,
+      "surface_finish_ra": 3.2,
+      "tolerance_grade": 10
+    },
+    "usage_guidelines": [
+      "M8底孔专用",
+      "118°通用顶角",
+      "经济型HSS钻头"
+    ],
+    "compatible_materials": [
+      "P",
+      "M",
+      "K"
+    ],
+    "manufacturer_id": "mfr-zcc",
+    "model_number": "B6.8S-30L79",
+    "image_url": "/images/cutters/hole_drill.png"
+  },
+  {
+    "id": "hole-005",
+    "name": "Φ3 中心钻",
+    "cutter_type": {
+      "category": "hole_making",
+      "subcategory": "hole_drill",
+      "variant": "center_drill"
+    },
+    "material": {
+      "substrate": "hss_cobalt",
+      "coating_type": "TiN",
+      "hardness_hrc": 67,
+      "iso_class": "HSS-Co"
+    },
+    "geometry": {
+      "diameter": 3,
+      "length": 40,
+      "flute_length": 8,
+      "number_of_flutes": 2,
+      "helix_angle": 30,
+      "corner_radius": 0
+    },
+    "recommended_parameters": {
+      "vc_steel": 28,
+      "vc_stainless": 18,
+      "fn_steel": 0.06,
+      "fn_stainless": 0.04,
+      "point_angle": 60,
+      "cooling_method": 2,
+      "max_l_d_ratio": 2.0,
+      "surface_finish_ra": 1.6,
+      "tolerance_grade": 8
+    },
+    "usage_guidelines": [
+      "加工中心孔定位基准",
+      "带护锥",
+      "低速低进给"
+    ],
+    "compatible_materials": [
+      "P",
+      "M",
+      "K"
+    ],
+    "manufacturer_id": "mfr-zcc",
+    "model_number": "A3-L40",
+    "image_url": "/images/cutters/hole_drill.png"
+  },
+  {
+    "id": "hole-006",
+    "name": "Φ10 定心钻 90°",
+    "cutter_type": {
+      "category": "hole_making",
+      "subcategory": "hole_drill",
+      "variant": "spot_drill"
+    },
+    "material": {
+      "substrate": "carbide_K20",
+      "coating_type": "TiAlN",
+      "hardness_hrc": 92,
+      "iso_class": "K20"
+    },
+    "geometry": {
+      "diameter": 10,
+      "length": 50,
+      "flute_length": 6,
+      "number_of_flutes": 2,
+      "helix_angle": 0,
+      "corner_radius": 0
+    },
+    "recommended_parameters": {
+      "vc_steel": 70,
+      "vc_aluminum": 170,
+      "fn_steel": 0.08,
+      "fn_aluminum": 0.12,
+      "point_angle": 90,
+      "cooling_method": 2,
+      "max_l_d_ratio": 1.0,
+      "surface_finish_ra": 1.6,
+      "tolerance_grade": 8
+    },
+    "usage_guidelines": [
+      "钻前定心",
+      "90°顶角",
+      "防止钻偏"
+    ],
+    "compatible_materials": [
+      "P",
+      "N"
+    ],
+    "manufacturer_id": "mfr-mitsubishi",
+    "model_number": "MVS-10050-90",
+    "image_url": "/images/cutters/hole_drill.png"
+  },
+  {
+    "id": "hole-007",
+    "name": "MVS Φ12 不锈钢专用钻",
+    "cutter_type": {
+      "category": "hole_making",
+      "subcategory": "hole_drill",
+      "variant": "solid_carbide_drill"
+    },
+    "material": {
+      "substrate": "carbide_P25",
+      "coating_type": "AlCrN",
+      "hardness_hrc": 91,
+      "iso_class": "P25"
+    },
+    "geometry": {
+      "diameter": 12,
+      "length": 101,
+      "flute_length": 55,
+      "number_of_flutes": 2,
+      "helix_angle": 35,
+      "corner_radius": 0
+    },
+    "recommended_parameters": {
+      "vc_stainless": 60,
+      "vc_steel": 85,
+      "fn_stainless": 0.16,
+      "fn_steel": 0.22,
+      "point_angle": 135,
+      "cooling_method": 3,
+      "max_l_d_ratio": 5.0,
+      "surface_finish_ra": 1.6,
+      "tolerance_grade": 8
+    },
+    "usage_guidelines": [
+      "不锈钢专用",
+      "135°顶角改善排屑",
+      "分屑效果好"
+    ],
+    "compatible_materials": [
+      "M",
+      "P"
+    ],
+    "manufacturer_id": "mfr-mitsubishi",
+    "model_number": "MZS-12055-PM",
+    "image_url": "/images/cutters/hole_drill.png"
+  },
+  {
+    "id": "hole-008",
+    "name": "Φ8 深孔钻 长径比10:1",
+    "cutter_type": {
+      "category": "hole_making",
+      "subcategory": "hole_drill",
+      "variant": "gun_drill"
+    },
+    "material": {
+      "substrate": "carbide_K10",
+      "coating_type": "TiAlN",
+      "hardness_hrc": 93,
+      "iso_class": "K10"
+    },
+    "geometry": {
+      "diameter": 8,
+      "length": 200,
+      "flute_length": 80,
+      "number_of_flutes": 1,
+      "helix_angle": 0,
+      "corner_radius": 0
+    },
+    "recommended_parameters": {
+      "vc_steel": 60,
+      "vc_stainless": 35,
+      "fn_steel": 0.06,
+      "fn_stainless": 0.04,
+      "point_angle": 120,
+      "cooling_method": 3,
+      "max_l_d_ratio": 25.0,
+      "surface_finish_ra": 1.6,
+      "tolerance_grade": 8
+    },
+    "usage_guidelines": [
+      "单槽内冷",
+      "长径比>5深孔",
+      "需专用引导套"
+    ],
+    "compatible_materials": [
+      "P",
+      "M"
+    ],
+    "manufacturer_id": "mfr-walter",
+    "model_number": "GD-080-200-AK10",
+    "image_url": "/images/cutters/hole_drill.png"
+  },
+  {
+    "id": "hole-009",
+    "name": "CoroReamer 830 Φ12H7 机用铰刀",
+    "cutter_type": {
+      "category": "hole_making",
+      "subcategory": "hole_reamer",
+      "variant": "machine"
+    },
+    "material": {
+      "substrate": "carbide_K10",
+      "coating_type": "TiAlN",
+      "hardness_hrc": 93,
+      "iso_class": "K10"
+    },
+    "geometry": {
+      "diameter": 12,
+      "length": 100,
+      "flute_length": 30,
+      "number_of_flutes": 6,
+      "helix_angle": 0,
+      "corner_radius": 0
+    },
+    "recommended_parameters": {
+      "vc_steel": 70,
+      "vc_cast_iron": 95,
+      "vc_aluminum": 140,
+      "fn_steel": 0.4,
+      "fn_cast_iron": 0.6,
+      "fn_aluminum": 0.8,
+      "tolerance_class": 7,
+      "cooling_method": 3,
+      "max_l_d_ratio": 2.5,
+      "surface_finish_ra": 0.4,
+      "tolerance_grade": 7
+    },
+    "usage_guidelines": [
+      "H7级精密铰孔",
+      "IT7精度保证",
+      "高fn低Vc策略"
+    ],
+    "compatible_materials": [
+      "P",
+      "K",
+      "N"
+    ],
+    "manufacturer_id": "mfr-sandvik",
+    "model_number": "830A-1200-H7",
+    "image_url": "/images/cutters/hole_reamer.png"
+  },
+  {
+    "id": "hole-010",
+    "name": "PR系列 Φ10H7 机用铰刀",
+    "cutter_type": {
+      "category": "hole_making",
+      "subcategory": "hole_reamer",
+      "variant": "machine"
+    },
+    "material": {
+      "substrate": "hss_cobalt",
+      "coating_type": "TiN",
+      "hardness_hrc": 67,
+      "iso_class": "HSS-Co"
+    },
+    "geometry": {
+      "diameter": 10,
+      "length": 90,
+      "flute_length": 25,
+      "number_of_flutes": 6,
+      "helix_angle": 0,
+      "corner_radius": 0
+    },
+    "recommended_parameters": {
+      "vc_steel": 45,
+      "vc_cast_iron": 65,
+      "fn_steel": 0.3,
+      "fn_cast_iron": 0.5,
+      "tolerance_class": 7,
+      "cooling_method": 2,
+      "max_l_d_ratio": 2.5,
+      "surface_finish_ra": 0.6,
+      "tolerance_grade": 7
+    },
+    "usage_guidelines": [
+      "H7级铰孔",
+      "直槽精密导向",
+      "经济型"
+    ],
+    "compatible_materials": [
+      "P",
+      "K"
+    ],
+    "manufacturer_id": "mfr-yamawa",
+    "model_number": "PR-1000-H7",
+    "image_url": "/images/cutters/hole_reamer.png"
+  },
+  {
+    "id": "hole-011",
+    "name": "Φ8 螺旋槽铰刀",
+    "cutter_type": {
+      "category": "hole_making",
+      "subcategory": "hole_reamer",
+      "variant": "spiral"
+    },
+    "material": {
+      "substrate": "carbide_K15",
+      "coating_type": "TiAlN",
+      "hardness_hrc": 92,
+      "iso_class": "K15"
+    },
+    "geometry": {
+      "diameter": 8,
+      "length": 85,
+      "flute_length": 22,
+      "number_of_flutes": 6,
+      "helix_angle": 15,
+      "corner_radius": 0
+    },
+    "recommended_parameters": {
+      "vc_steel": 55,
+      "vc_stainless": 38,
+      "fn_steel": 0.35,
+      "fn_stainless": 0.22,
+      "tolerance_class": 7,
+      "cooling_method": 2,
+      "max_l_d_ratio": 2.8,
+      "surface_finish_ra": 0.4,
+      "tolerance_grade": 7
+    },
+    "usage_guidelines": [
+      "盲孔铰孔排屑好",
+      "螺旋槽设计",
+      "断续孔铰削"
+    ],
+    "compatible_materials": [
+      "P",
+      "M"
+    ],
+    "manufacturer_id": "mfr-yamawa",
+    "model_number": "PR-0800-H7-SPIRAL",
+    "image_url": "/images/cutters/hole_reamer.png"
+  },
+  {
+    "id": "hole-012",
+    "name": "莫氏3号 锥度铰刀",
+    "cutter_type": {
+      "category": "hole_making",
+      "subcategory": "hole_reamer",
+      "variant": "taper"
+    },
+    "material": {
+      "substrate": "hss_cobalt",
+      "coating_type": "TiN",
+      "hardness_hrc": 67,
+      "iso_class": "HSS-Co"
+    },
+    "geometry": {
+      "diameter": 23.8,
+      "length": 130,
+      "flute_length": 70,
+      "number_of_flutes": 6,
+      "helix_angle": 0,
+      "corner_radius": 0
+    },
+    "recommended_parameters": {
+      "vc_steel": 22,
+      "fn_steel": 0.3,
+      "tolerance_class": 0,
+      "cooling_method": 2,
+      "max_l_d_ratio": 2.0,
+      "surface_finish_ra": 0.8,
+      "tolerance_grade": 5
+    },
+    "usage_guidelines": [
+      "莫氏3号锥孔精加工",
+      "手动/低速机用",
+      "配莫氏锥柄"
+    ],
+    "compatible_materials": [
+      "P"
+    ],
+    "manufacturer_id": "mfr-hagong",
+    "model_number": "MT3-TAPER-REAMER",
+    "image_url": "/images/cutters/hole_reamer.png"
+  },
+  {
+    "id": "hole-013",
+    "name": "CoroBore 820 精镗刀 Φ40-50mm",
+    "cutter_type": {
+      "category": "hole_making",
+      "subcategory": "hole_boring",
+      "variant": "fine_boring"
+    },
+    "material": {
+      "substrate": "carbide_P20",
+      "coating_type": "TiAlN",
+      "hardness_hrc": 92,
+      "iso_class": "P20"
+    },
+    "geometry": {
+      "diameter": 45,
+      "length": 150,
+      "flute_length": 0,
+      "number_of_flutes": 1,
+      "helix_angle": 0,
+      "corner_radius": 0.4
+    },
+    "recommended_parameters": {
+      "vc_steel": 200,
+      "vc_cast_iron": 240,
+      "vc_aluminum": 380,
+      "fn_steel": 0.12,
+      "fn_cast_iron": 0.15,
+      "fn_aluminum": 0.18,
+      "bore_diameter_min": 40,
+      "bore_diameter_max": 50,
+      "adjustment_precision": 0.01,
+      "cooling_method": 3,
+      "max_l_d_ratio": 4.0,
+      "surface_finish_ra": 0.4,
+      "tolerance_grade": 6
+    },
+    "usage_guidelines": [
+      "IT6-IT7精镗孔",
+      "0.01mm微调精度",
+      "单刃精镗"
+    ],
+    "compatible_materials": [
+      "P",
+      "K",
+      "N"
+    ],
+    "manufacturer_id": "mfr-sandvik",
+    "model_number": "EWN 40-50",
+    "image_url": "/images/cutters/hole_boring.png"
+  },
+  {
+    "id": "hole-014",
+    "name": "粗镗刀 Φ30-40mm 双刃",
+    "cutter_type": {
+      "category": "hole_making",
+      "subcategory": "hole_boring",
+      "variant": "rough_boring"
+    },
+    "material": {
+      "substrate": "carbide_P30",
+      "coating_type": "TiAlN",
+      "hardness_hrc": 91,
+      "iso_class": "P30"
+    },
+    "geometry": {
+      "diameter": 35,
+      "length": 160,
+      "flute_length": 0,
+      "number_of_flutes": 2,
+      "helix_angle": 0,
+      "corner_radius": 0.8
+    },
+    "recommended_parameters": {
+      "vc_steel": 160,
+      "vc_cast_iron": 200,
+      "fn_steel": 0.25,
+      "fn_cast_iron": 0.3,
+      "bore_diameter_min": 30,
+      "bore_diameter_max": 40,
+      "adjustment_precision": 0.05,
+      "cooling_method": 2,
+      "max_l_d_ratio": 3.0,
+      "surface_finish_ra": 1.6,
+      "tolerance_grade": 8
+    },
+    "usage_guidelines": [
+      "双刃高效粗镗",
+      "对称切削力平衡",
+      "ap可达3mm"
+    ],
+    "compatible_materials": [
+      "P",
+      "K"
+    ],
+    "manufacturer_id": "mfr-kennametal",
+    "model_number": "R660-035-040-2E KCP10",
+    "image_url": "/images/cutters/hole_boring.png"
+  },
+  {
+    "id": "hole-015",
+    "name": "微调镗刀 Φ20-30mm 0.001mm级",
+    "cutter_type": {
+      "category": "hole_making",
+      "subcategory": "hole_boring",
+      "variant": "micro_boring"
+    },
+    "material": {
+      "substrate": "carbide_P10",
+      "coating_type": "TiAlN",
+      "hardness_hrc": 93,
+      "iso_class": "P10"
+    },
+    "geometry": {
+      "diameter": 25,
+      "length": 140,
+      "flute_length": 0,
+      "number_of_flutes": 1,
+      "helix_angle": 0,
+      "corner_radius": 0.2
+    },
+    "recommended_parameters": {
+      "vc_steel": 220,
+      "fn_steel": 0.08,
+      "bore_diameter_min": 20,
+      "bore_diameter_max": 30,
+      "adjustment_precision": 0.001,
+      "cooling_method": 3,
+      "max_l_d_ratio": 4.0,
+      "surface_finish_ra": 0.2,
+      "tolerance_grade": 5
+    },
+    "usage_guidelines": [
+      "IT5超精密镗孔",
+      "0.001mm级微调",
+      "镜面孔加工"
+    ],
+    "compatible_materials": [
+      "P"
+    ],
+    "manufacturer_id": "mfr-kennametal",
+    "model_number": "M660-020-030-SM KCP05",
+    "image_url": "/images/cutters/hole_boring.png"
+  },
+  {
+    "id": "hole-016",
+    "name": "90° 沉头锪钻 Φ16",
+    "cutter_type": {
+      "category": "hole_making",
+      "subcategory": "hole_countersink",
+      "variant": "countersink"
+    },
+    "material": {
+      "substrate": "carbide_K20",
+      "coating_type": "TiN",
+      "hardness_hrc": 91,
+      "iso_class": "K20"
+    },
+    "geometry": {
+      "diameter": 16,
+      "length": 60,
+      "flute_length": 10,
+      "number_of_flutes": 3,
+      "helix_angle": 0,
+      "corner_radius": 0
+    },
+    "recommended_parameters": {
+      "vc_steel": 45,
+      "vc_aluminum": 110,
+      "fn_steel": 0.06,
+      "fn_aluminum": 0.1,
+      "point_angle": 90,
+      "cooling_method": 2,
+      "max_l_d_ratio": 1.0,
+      "surface_finish_ra": 1.6,
+      "tolerance_grade": 10
+    },
+    "usage_guidelines": [
+      "90°沉头螺钉孔",
+      "锥面加工",
+      "低速进给"
+    ],
+    "compatible_materials": [
+      "P",
+      "N"
+    ],
+    "manufacturer_id": "mfr-zcc",
+    "model_number": "CSK-160-90",
+    "image_url": "/images/cutters/hole_countersink.png"
+  },
+  {
+    "id": "hole-017",
+    "name": "锪平面钻 Φ25 圆柱导向",
+    "cutter_type": {
+      "category": "hole_making",
+      "subcategory": "hole_countersink",
+      "variant": "counterbore"
+    },
+    "material": {
+      "substrate": "hss_cobalt",
+      "coating_type": "TiN",
+      "hardness_hrc": 67,
+      "iso_class": "HSS-Co"
+    },
+    "geometry": {
+      "diameter": 25,
+      "length": 70,
+      "flute_length": 15,
+      "number_of_flutes": 4,
+      "helix_angle": 0,
+      "corner_radius": 0
+    },
+    "recommended_parameters": {
+      "vc_steel": 35,
+      "fn_steel": 0.08,
+      "cooling_method": 2,
+      "max_l_d_ratio": 1.0,
+      "surface_finish_ra": 3.2,
+      "tolerance_grade": 11
+    },
+    "usage_guidelines": [
+      "锪平面/沉孔",
+      "圆柱导向定心",
+      "端面刃切削"
+    ],
+    "compatible_materials": [
+      "P"
+    ],
+    "manufacturer_id": "mfr-hagong",
+    "model_number": "CB-250-HSS",
+    "image_url": "/images/cutters/hole_countersink.png"
+  },
+  {
+    "id": "hole-018",
+    "name": "Φ16 扩孔钻 4槽",
+    "cutter_type": {
+      "category": "hole_making",
+      "subcategory": "hole_drill",
+      "variant": "core_drill"
+    },
+    "material": {
+      "substrate": "carbide_P25",
+      "coating_type": "TiAlN",
+      "hardness_hrc": 92,
+      "iso_class": "P25"
+    },
+    "geometry": {
+      "diameter": 16,
+      "length": 100,
+      "flute_length": 50,
+      "number_of_flutes": 4,
+      "helix_angle": 30,
+      "corner_radius": 0
+    },
+    "recommended_parameters": {
+      "vc_steel": 70,
+      "vc_cast_iron": 95,
+      "fn_steel": 0.18,
+      "fn_cast_iron": 0.22,
+      "point_angle": 120,
+      "cooling_method": 2,
+      "max_l_d_ratio": 3.0,
+      "surface_finish_ra": 1.6,
+      "tolerance_grade": 9
+    },
+    "usage_guidelines": [
+      "钻后扩孔提高精度",
+      "4槽导向好",
+      "IT10-IT11精度"
+    ],
+    "compatible_materials": [
+      "P",
+      "K"
+    ],
+    "manufacturer_id": "mfr-zcc",
+    "model_number": "CD-1604-L100",
+    "image_url": "/images/cutters/hole_drill.png"
+  }
+]

@@ -1,0 +1,194 @@
+[
+  {
+    "category": "turning",
+    "category_zh": "车削刀具",
+    "category_en": "Turning",
+    "icon": "RotateCcw",
+    "subcategories": [
+      {"subcategory": "turning_external", "subcategory_zh": "外圆车刀", "subcategory_en": "External Turning", "variants": [
+        {"variant": "roughing", "variant_zh": "粗车外圆刀", "variant_en": "Roughing"},
+        {"variant": "finishing", "variant_zh": "精车外圆刀", "variant_en": "Finishing"},
+        {"variant": "light", "variant_zh": "轻切削外圆刀", "variant_en": "Light Cutting"},
+        {"variant": "heavy", "variant_zh": "重切削外圆刀", "variant_en": "Heavy Cutting"},
+        {"variant": "miniature", "variant_zh": "小型外圆刀", "variant_en": "Miniature"}
+      ]},
+      {"subcategory": "turning_internal", "subcategory_zh": "内孔车刀", "subcategory_en": "Internal Turning", "variants": [
+        {"variant": "through_hole", "variant_zh": "通孔车刀", "variant_en": "Through Hole"},
+        {"variant": "blind_hole", "variant_zh": "盲孔车刀", "variant_en": "Blind Hole"},
+        {"variant": "micro", "variant_zh": "微小径内孔车刀", "variant_en": "Micro Bore"}
+      ]},
+      {"subcategory": "turning_facing", "subcategory_zh": "端面车刀", "subcategory_en": "Facing", "variants": [
+        {"variant": "external", "variant_zh": "外端面车刀", "variant_en": "External Facing"},
+        {"variant": "internal", "variant_zh": "内端面车刀", "variant_en": "Internal Facing"}
+      ]},
+      {"subcategory": "turning_grooving", "subcategory_zh": "切断刀/切槽刀", "subcategory_en": "Grooving", "variants": [
+        {"variant": "parting", "variant_zh": "切断刀", "variant_en": "Parting Off"},
+        {"variant": "external", "variant_zh": "外圆切槽刀", "variant_en": "External Groove"},
+        {"variant": "internal", "variant_zh": "内孔切槽刀", "variant_en": "Internal Groove"},
+        {"variant": "face", "variant_zh": "端面切槽刀", "variant_en": "Face Groove"},
+        {"variant": "narrow", "variant_zh": "窄槽刀", "variant_en": "Narrow Groove"},
+        {"variant": "wide", "variant_zh": "宽槽刀", "variant_en": "Wide Groove"}
+      ]},
+      {"subcategory": "turning_threading", "subcategory_zh": "螺纹车刀", "subcategory_en": "Threading", "variants": [
+        {"variant": "external", "variant_zh": "外螺纹车刀", "variant_en": "External Thread"},
+        {"variant": "internal", "variant_zh": "内螺纹车刀", "variant_en": "Internal Thread"},
+        {"variant": "pipe", "variant_zh": "管螺纹车刀", "variant_en": "Pipe Thread"}
+      ]},
+      {"subcategory": "turning_profiling", "subcategory_zh": "仿形车刀", "subcategory_en": "Profiling", "variants": [
+        {"variant": "rough", "variant_zh": "粗仿形车刀", "variant_en": "Rough Profiling"},
+        {"variant": "finish", "variant_zh": "精仿形车刀", "variant_en": "Finish Profiling"}
+      ]}
+    ]
+  },
+  {
+    "category": "milling",
+    "category_zh": "铣削刀具",
+    "category_en": "Milling",
+    "icon": "CircleDot",
+    "subcategories": [
+      {"subcategory": "milling_end_mill", "subcategory_zh": "立铣刀", "subcategory_en": "End Mill", "variants": [
+        {"variant": "square", "variant_zh": "方肩立铣刀", "variant_en": "Square"},
+        {"variant": "ball_nose", "variant_zh": "球头立铣刀", "variant_en": "Ball Nose"},
+        {"variant": "bull_nose", "variant_zh": "圆鼻立铣刀", "variant_en": "Bull Nose"},
+        {"variant": "high_feed", "variant_zh": "高进给立铣刀", "variant_en": "High Feed"},
+        {"variant": "roughing", "variant_zh": "粗铣立铣刀", "variant_en": "Roughing"},
+        {"variant": "chamfer", "variant_zh": "倒角立铣刀", "variant_en": "Chamfer"},
+        {"variant": "micro", "variant_zh": "微径立铣刀", "variant_en": "Micro"},
+        {"variant": "taper", "variant_zh": "锥度立铣刀", "variant_en": "Taper"}
+      ]},
+      {"subcategory": "milling_face_mill", "subcategory_zh": "面铣刀", "subcategory_en": "Face Mill", "variants": [
+        {"variant": "indexable", "variant_zh": "可转位面铣刀", "variant_en": "Indexable"},
+        {"variant": "brazed", "variant_zh": "焊接式面铣刀", "variant_en": "Brazed"},
+        {"variant": "fine_pitch", "variant_zh": "密齿面铣刀", "variant_en": "Fine Pitch"},
+        {"variant": "coarse_pitch", "variant_zh": "粗齿面铣刀", "variant_en": "Coarse Pitch"}
+      ]},
+      {"subcategory": "milling_corncob", "subcategory_zh": "玉米铣刀", "subcategory_en": "Corncob", "variants": [
+        {"variant": "standard", "variant_zh": "等径玉米铣刀", "variant_en": "Standard"},
+        {"variant": "tapered", "variant_zh": "锥度玉米铣刀", "variant_en": "Tapered"}
+      ]},
+      {"subcategory": "milling_t_slot", "subcategory_zh": "T型槽铣刀", "subcategory_en": "T-Slot", "variants": [
+        {"variant": "standard", "variant_zh": "标准T型槽铣刀", "variant_en": "Standard"}
+      ]},
+      {"subcategory": "milling_keyway", "subcategory_zh": "键槽铣刀", "subcategory_en": "Keyway", "variants": [
+        {"variant": "standard", "variant_zh": "标准键槽铣刀", "variant_en": "Standard"},
+        {"variant": "woodruff", "variant_zh": "半圆键槽铣刀", "variant_en": "Woodruff"}
+      ]},
+      {"subcategory": "milling_angle", "subcategory_zh": "角度铣刀", "subcategory_en": "Angle", "variants": [
+        {"variant": "single", "variant_zh": "单角铣刀", "variant_en": "Single Angle"},
+        {"variant": "double", "variant_zh": "双角铣刀", "variant_en": "Double Angle"}
+      ]},
+      {"subcategory": "milling_form", "subcategory_zh": "成形铣刀", "subcategory_en": "Form", "variants": [
+        {"variant": "gear", "variant_zh": "齿轮铣刀", "variant_en": "Gear"},
+        {"variant": "convex", "variant_zh": "凸半圆铣刀", "variant_en": "Convex"},
+        {"variant": "concave", "variant_zh": "凹半圆铣刀", "variant_en": "Concave"}
+      ]},
+      {"subcategory": "milling_saw", "subcategory_zh": "锯片铣刀", "subcategory_en": "Saw", "variants": [
+        {"variant": "solid", "variant_zh": "整体锯片", "variant_en": "Solid"},
+        {"variant": "inserted", "variant_zh": "镶齿锯片", "variant_en": "Inserted"}
+      ]}
+    ]
+  },
+  {
+    "category": "hole_making",
+    "category_zh": "孔加工刀具",
+    "category_en": "Hole Making",
+    "icon": "Drill",
+    "subcategories": [
+      {"subcategory": "hole_drill", "subcategory_zh": "钻头", "subcategory_en": "Drill", "variants": [
+        {"variant": "twist", "variant_zh": "麻花钻", "variant_en": "Twist"},
+        {"variant": "center", "variant_zh": "中心钻", "variant_en": "Center"},
+        {"variant": "spot", "variant_zh": "定心钻", "variant_en": "Spot"},
+        {"variant": "core", "variant_zh": "扩孔钻", "variant_en": "Core"},
+        {"variant": "step", "variant_zh": "阶梯钻", "variant_en": "Step"},
+        {"variant": "indexable", "variant_zh": "可转位钻头", "variant_en": "Indexable"},
+        {"variant": "gun", "variant_zh": "深孔钻", "variant_en": "Gun"},
+        {"variant": "solid_carbide", "variant_zh": "硬质合金定柄钻", "variant_en": "Solid Carbide"}
+      ]},
+      {"subcategory": "hole_reamer", "subcategory_zh": "铰刀", "subcategory_en": "Reamer", "variants": [
+        {"variant": "straight", "variant_zh": "直槽铰刀", "variant_en": "Straight"},
+        {"variant": "spiral", "variant_zh": "螺旋槽铰刀", "variant_en": "Spiral"},
+        {"variant": "taper", "variant_zh": "锥度铰刀", "variant_en": "Taper"},
+        {"variant": "adjustable", "variant_zh": "可调铰刀", "variant_en": "Adjustable"},
+        {"variant": "machine", "variant_zh": "机用铰刀", "variant_en": "Machine"},
+        {"variant": "hand", "variant_zh": "手用铰刀", "variant_en": "Hand"}
+      ]},
+      {"subcategory": "hole_boring", "subcategory_zh": "镗刀", "subcategory_en": "Boring", "variants": [
+        {"variant": "rough", "variant_zh": "粗镗刀", "variant_en": "Rough"},
+        {"variant": "fine", "variant_zh": "精镗刀", "variant_en": "Fine"},
+        {"variant": "micro", "variant_zh": "微调镗刀", "variant_en": "Micro"},
+        {"variant": "double", "variant_zh": "双刃镗刀", "variant_en": "Double Edge"}
+      ]},
+      {"subcategory": "hole_countersink", "subcategory_zh": "锪钻", "subcategory_en": "Countersink", "variants": [
+        {"variant": "chamfer", "variant_zh": "沉头锪钻", "variant_en": "Chamfer"},
+        {"variant": "plane", "variant_zh": "锪平面钻", "variant_en": "Counterbore"}
+      ]}
+    ]
+  },
+  {
+    "category": "threading",
+    "category_zh": "螺纹加工刀具",
+    "category_en": "Threading",
+    "icon": "Wrench",
+    "subcategories": [
+      {"subcategory": "threading_tap", "subcategory_zh": "丝锥", "subcategory_en": "Tap", "variants": [
+        {"variant": "machine", "variant_zh": "机用丝锥", "variant_en": "Machine"},
+        {"variant": "hand", "variant_zh": "手用丝锥", "variant_en": "Hand"},
+        {"variant": "spiral_flute", "variant_zh": "螺旋槽丝锥", "variant_en": "Spiral Flute"},
+        {"variant": "straight_flute", "variant_zh": "直槽丝锥", "variant_en": "Straight Flute"},
+        {"variant": "spiral_point", "variant_zh": "螺尖丝锥", "variant_en": "Spiral Point"},
+        {"variant": "forming", "variant_zh": "挤压丝锥", "variant_en": "Forming"},
+        {"variant": "pipe", "variant_zh": "管螺纹丝锥", "variant_en": "Pipe"},
+        {"variant": "taper_pipe", "variant_zh": "锥管螺纹丝锥", "variant_en": "Taper Pipe"}
+      ]},
+      {"subcategory": "threading_die", "subcategory_zh": "板牙", "subcategory_en": "Die", "variants": [
+        {"variant": "round", "variant_zh": "圆板牙", "variant_en": "Round"},
+        {"variant": "hex", "variant_zh": "六角板牙", "variant_en": "Hex"}
+      ]},
+      {"subcategory": "threading_mill", "subcategory_zh": "螺纹铣刀", "subcategory_en": "Thread Mill", "variants": [
+        {"variant": "single_point", "variant_zh": "单刃螺纹铣刀", "variant_en": "Single Point"},
+        {"variant": "multi_point", "variant_zh": "多刃螺纹铣刀", "variant_en": "Multi Point"},
+        {"variant": "solid", "variant_zh": "整体螺纹铣刀", "variant_en": "Solid"},
+        {"variant": "indexable", "variant_zh": "可转位螺纹铣刀", "variant_en": "Indexable"}
+      ]},
+      {"subcategory": "threading_turning", "subcategory_zh": "螺纹车刀", "subcategory_en": "Thread Turning", "variants": [
+        {"variant": "external", "variant_zh": "外螺纹车刀", "variant_en": "External"},
+        {"variant": "internal", "variant_zh": "内螺纹车刀", "variant_en": "Internal"},
+        {"variant": "pipe", "variant_zh": "管螺纹车刀", "variant_en": "Pipe"}
+      ]}
+    ]
+  },
+  {
+    "category": "gear_cutting",
+    "category_zh": "齿轮加工刀具",
+    "category_en": "Gear Cutting",
+    "icon": "Cog",
+    "subcategories": [
+      {"subcategory": "gear_hob", "subcategory_zh": "滚刀", "subcategory_en": "Hob", "variants": [
+        {"variant": "standard", "variant_zh": "齿轮滚刀", "variant_en": "Standard"},
+        {"variant": "pre_shave", "variant_zh": "剃前滚刀", "variant_en": "Pre-Shave"},
+        {"variant": "pre_grind", "variant_zh": "磨前滚刀", "variant_en": "Pre-Grind"},
+        {"variant": "worm_wheel", "variant_zh": "蜗轮滚刀", "variant_en": "Worm Wheel"},
+        {"variant": "sprocket", "variant_zh": "链轮滚刀", "variant_en": "Sprocket"},
+        {"variant": "spline", "variant_zh": "渐开线花键滚刀", "variant_en": "Spline"}
+      ]},
+      {"subcategory": "gear_shaper", "subcategory_zh": "插齿刀", "subcategory_en": "Shaper", "variants": [
+        {"variant": "disc", "variant_zh": "盘形插齿刀", "variant_en": "Disc"},
+        {"variant": "bowl", "variant_zh": "碗形插齿刀", "variant_en": "Bowl"},
+        {"variant": "taper_shank", "variant_zh": "锥柄插齿刀", "variant_en": "Taper Shank"},
+        {"variant": "hub", "variant_zh": "筒形插齿刀", "variant_en": "Hub"}
+      ]},
+      {"subcategory": "gear_shaving", "subcategory_zh": "剃齿刀", "subcategory_en": "Shaving", "variants": [
+        {"variant": "disc", "variant_zh": "盘形剃齿刀", "variant_en": "Disc"},
+        {"variant": "rack", "variant_zh": "齿条形剃齿刀", "variant_en": "Rack"}
+      ]},
+      {"subcategory": "gear_milling_cutter", "subcategory_zh": "齿轮铣刀", "subcategory_en": "Gear Milling", "variants": [
+        {"variant": "disc", "variant_zh": "盘形齿轮铣刀", "variant_en": "Disc"},
+        {"variant": "finger", "variant_zh": "指形齿轮铣刀", "variant_en": "Finger"}
+      ]},
+      {"subcategory": "gear_bevel", "subcategory_zh": "锥齿轮刀具", "subcategory_en": "Bevel Gear", "variants": [
+        {"variant": "spiral", "variant_zh": "弧齿锥齿轮铣刀", "variant_en": "Spiral"},
+        {"variant": "straight", "variant_zh": "直齿锥齿轮刨刀", "variant_en": "Straight"}
+      ]}
+    ]
+  }
+]

@@ -1,0 +1,14 @@
+# Elasticsearch 配置
+cluster.name: "cnc-tooling-cluster"
+network.host: 0.0.0.0
+http.port: 9200
+
+# 单节点模式（开发环境）
+discovery.type: single-node
+
+# 安全配置（开发环境禁用）
+xpack.security.enabled: false
+xpack.security.enrollment.enabled: false
+
+# 内存设置
+bootstrap.memory_lock: true

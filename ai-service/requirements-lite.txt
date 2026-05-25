@@ -1,0 +1,14 @@
+# AI Service Dependencies - Lightweight ONNX version
+fastapi>=0.109.0
+uvicorn[standard]>=0.27.0
+pydantic>=2.5.0
+
+# ONNX Runtime (much smaller than PyTorch)
+onnxruntime>=1.17.0
+numpy>=1.26.0
+chromadb>=0.4.22
+
+# Sentence transformers with ONNX support
+# We'll use optimum for ONNX runtime integration
+optimum[onnxruntime]>=1.16.0
+tokenizers>=0.15.0

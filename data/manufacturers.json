@@ -1,0 +1,14 @@
+[
+  {"id": "mfr-sandvik", "name_zh": "山特维克可乐满", "name_en": "Sandvik Coromant", "country": "瑞典", "website": "www.sandvik.coromant.com", "specialties": ["turning", "milling", "hole_making", "threading"], "description": "全球刀具行业领导者"},
+  {"id": "mfr-kennametal", "name_zh": "肯纳金属", "name_en": "Kennametal", "country": "美国", "website": "www.kennametal.com", "specialties": ["turning", "milling", "hole_making"], "description": "美国知名刀具厂商"},
+  {"id": "mfr-mitsubishi", "name_zh": "三菱材料", "name_en": "Mitsubishi Materials", "country": "日本", "website": "www.mitsubishicarbide.com", "specialties": ["turning", "milling", "hole_making"], "description": "日本硬质合金刀具领先"},
+  {"id": "mfr-walter", "name_zh": "瓦尔特", "name_en": "Walter", "country": "德国", "website": "www.walter-tools.com", "specialties": ["milling", "hole_making"], "description": "德国精密刀具"},
+  {"id": "mfr-iscar", "name_zh": "伊斯卡", "name_en": "Iscar", "country": "以色列", "website": "www.iscar.com", "specialties": ["milling", "turning", "hole_making"], "description": "以色列创新刀具"},
+  {"id": "mfr-seco", "name_zh": "赛可", "name_en": "Seco", "country": "瑞典", "website": "www.secotools.com", "specialties": ["milling", "turning", "hole_making"], "description": "瑞典金属切削解决方案"},
+  {"id": "mfr-zcc", "name_zh": "株洲钻石", "name_en": "ZCC", "country": "中国", "website": "www.zccct.com", "specialties": ["turning", "milling", "hole_making"], "description": "国内硬质合金刀片龙头"},
+  {"id": "mfr-osg", "name_zh": "欧士机", "name_en": "OSG", "country": "日本", "website": "www.osgtool.com.cn", "specialties": ["threading", "hole_making"], "description": "丝锥领域全球领先"},
+  {"id": "mfr-yamawa", "name_zh": "山和", "name_en": "YAMAWA", "country": "日本", "website": "www.yamawa.com", "specialties": ["threading", "hole_making"], "description": "精密丝锥/铰刀"},
+  {"id": "mfr-hagong", "name_zh": "哈尔滨第一工具", "name_en": "Harbin First Tool", "country": "中国", "specialties": ["gear_cutting", "threading"], "description": "国内齿轮刀具领先"},
+  {"id": "mfr-hanjiang", "name_zh": "汉江工具", "name_en": "Hanjiang Tool", "country": "中国", "specialties": ["gear_cutting"], "description": "国内精密滚刀"},
+  {"id": "mfr-samputensili", "name_zh": "Samputensili", "name_en": "Samputensili", "country": "意大利", "website": "www.samputensili.com", "specialties": ["gear_cutting"], "description": "意大利高精度齿轮刀具"}
+]
