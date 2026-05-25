@@ -38,22 +38,26 @@ steps:
 
   # ==================== Deploy Stage ====================
   deploy:
-    image: appleboy/drone-ssh
-    settings:
-      host:
-        from_secret: deploy_host
-      username: root
-      key:
+    image: alpine:3.19
+    environment:
+      SSH_KEY:
         from_secret: ssh_key
-      port: 22
-      command_timeout: 15m
-      script:
-        - cd /root/clacky_workspace/cnc-tooling-knowledge
-        - git pull origin main
-        - docker compose -f docker-compose.yml up -d --build --remove-orphans
-        - sleep 10
-        - docker compose -f docker-compose.yml ps
-        - echo "=== Deployment completed ==="
+      DEPLOY_HOST:
+        from_secret: deploy_host
+    commands:
+      - apk add --no-cache openssh-client
+      - mkdir -p ~/.ssh
+      - echo "$SSH_KEY" > ~/.ssh/id_rsa
+      - chmod 600 ~/.ssh/id_rsa
+      - ssh-keyscan -H $DEPLOY_HOST >> ~/.ssh/known_hosts 2>/dev/null
+      - ssh -o StrictHostKeyChecking=no root@$DEPLOY_HOST "
+          cd /root/clacky_workspace/cnc-tooling-knowledge &&
+          git pull origin main &&
+          docker compose -f docker-compose.yml up -d --build --remove-orphans &&
+          sleep 10 &&
+          docker compose -f docker-compose.yml ps &&
+          echo '=== Deployment completed ==='
+        "
     when:
       event: [push, manual]
       branch: main
